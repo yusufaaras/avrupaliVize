@@ -74,8 +74,7 @@ const Pricing = () => {
                     Uygulamaya Git
                   </button>
                   <p className='text-4xl sm:text-5xl font-semibold text-midnight_text mb-3 group-hover:text-white text-center'>
-                    <span className="line-through text-black/30 text-3xl mr-2">${item.oldPrice}</span>
-                    ${item.price.yearly}
+                     ${item.price.yearly}
                     <span className='text-lightgrey text-3xl sm:text-4xl'> / 1 Kişi</span>
                   </p>
                   <ul className='mb-6'>

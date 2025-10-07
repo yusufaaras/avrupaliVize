@@ -150,8 +150,7 @@ const Pricing = () => {
                 {item.heading}
               </h3>
               <div className='flex justify-center items-center mb-8'>
-                <span className="line-through text-black/30 text-3xl mr-2">${item.oldPrice}</span>
-                <span className='text-4xl sm:text-5xl font-bold text-primary group-hover:text-white'>${selectedCategory === 'monthly' ? item.price.monthly : item.price.yearly}</span>
+                 <span className='text-4xl sm:text-5xl font-bold text-primary group-hover:text-white'>${selectedCategory === 'monthly' ? item.price.monthly : item.price.yearly}</span>
                 <span className='text-black/50 ml-2 text-lg'>/ 1 Kişi</span>
               </div>
               <ul className='mb-8'>
