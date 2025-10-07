@@ -51,8 +51,7 @@ const PlansData: plansData[] = [
       'Anında email',
     ],
     category: ['monthly', 'yearly'],
-    imgSrc: '/images/pricing/starone.svg',
-    oldPrice: 250,
+    imgSrc: '/images/pricing/starone.svg'
   },
   {
     heading: '60 Günlük',
@@ -69,8 +68,7 @@ const PlansData: plansData[] = [
       'Anında email',
     ],
     category: ['monthly', 'yearly'],
-    imgSrc: '/images/pricing/startwo.svg',
-    oldPrice: 300,
+    imgSrc: '/images/pricing/startwo.svg' 
   },
   {
     heading: '30 Günlük',
@@ -87,8 +85,7 @@ const PlansData: plansData[] = [
       'Anında email',
     ],
     category: ['monthly', 'yearly'],
-    imgSrc: '/images/pricing/starthree.svg',
-    oldPrice: 350,
+    imgSrc: '/images/pricing/starthree.svg' 
   },
   {
     heading: '15 Günlük',
@@ -105,8 +102,7 @@ const PlansData: plansData[] = [
       'Anında email',
     ],
     category: ['monthly', 'yearly'],
-    imgSrc: '/images/pricing/starone.svg',
-    oldPrice: 450,
+    imgSrc: '/images/pricing/starone.svg' 
   },
 ]
 
