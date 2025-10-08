@@ -9,9 +9,10 @@ import { footerlLinksData } from '@/app/types/footerlinks'
 const HeaderData: headerItem[] = [
   { label: 'Ana Sayfa', href: '/#' },
   { label: 'Hakkımızda', href: '/#product' },
-  { label: 'Hizmetler', href: '/#features ' },
+  { label: 'Hizmetler', href: '/#features' },
+  { label: 'Blog', href: '/blog' },       
   { label: 'Fiyatlandırma', href: '/#pricing' },
-  { label: 'İletişim', href: '/#contact ' },
+  { label: 'İletişim', href: '/#contact' },
 ]
 
 const FeatureData: featureData[] = [
@@ -37,7 +38,7 @@ const FeatureData: featureData[] = [
 
 const PlansData: plansData[] = [
   {
-    heading: '120 Günlük',
+    heading: '120 Gün içinde randevu',
     price: {
       monthly: 150,
       yearly: 150,
@@ -54,7 +55,7 @@ const PlansData: plansData[] = [
     imgSrc: '/images/pricing/starone.svg'
   },
   {
-    heading: '60 Günlük',
+    heading: '60 Gün içinde randevu',
     price: {
       monthly: 200,
       yearly: 200,
@@ -71,7 +72,7 @@ const PlansData: plansData[] = [
     imgSrc: '/images/pricing/startwo.svg' 
   },
   {
-    heading: '30 Günlük',
+    heading: '30 Gün içinde randevu',
     price: {
       monthly: 300,
       yearly: 300,
@@ -88,7 +89,7 @@ const PlansData: plansData[] = [
     imgSrc: '/images/pricing/starthree.svg' 
   },
   {
-    heading: '15 Günlük',
+    heading: '15 Gün içinde randevu',
     price: {
       monthly: 400,
       yearly: 400,
