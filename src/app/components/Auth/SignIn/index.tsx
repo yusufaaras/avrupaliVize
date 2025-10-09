@@ -18,30 +18,10 @@ const Signin = () => {
   })
   const [loading, setLoading] = useState(false)
 
+  // Herhangi bir giriş butonuna basınca anında /user'a yönlendir
   const loginUser = (e: any) => {
     e.preventDefault()
-
-    setLoading(true)
-    signIn('credentials', { ...loginData, redirect: false })
-      .then((callback) => {
-        if (callback?.error) {
-          toast.error(callback?.error)
-          console.log(callback?.error)
-          setLoading(false)
-          return
-        }
-
-        if (callback?.ok && !callback?.error) {
-          toast.success('Giriş başarılı')
-          setLoading(false)
-          router.push('/')
-        }
-      })
-      .catch((err) => {
-        setLoading(false)
-        console.log(err.message)
-        toast.error(err.message)
-      })
+    router.push('/user')
   }
 
   return (
@@ -50,7 +30,8 @@ const Signin = () => {
         <Logo />
       </div>
 
-      <SocialSignIn />
+      {/* Sosyal girişte de anında /user'a yönlendir */}
+      <SocialSignIn onAnySignInClick={() => router.push('/user')} />
 
       <span
         className="relative my-8 block text-center z-1 
@@ -61,7 +42,7 @@ const Signin = () => {
         </span>
       </span>
 
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={loginUser}>
         <div className='mb-[22px]'>
           <input
             type='email'

@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 // Örnek blog verileri
@@ -12,7 +13,6 @@ const blogPosts = [
     image: "/images/blog/blog3.jpeg",
     summary:
       "Amerika Birleşik Devletleri’ne seyahat etmek isteyen birçok kişinin karşılaştığı ilk zorluklardan biri, Amerika vize randevusu bekleme süresidir. Bu süreç, başvuru sahipleri için planlamayı zorlaştıran en kritik aşamalardan biridir. Randevu tarihinin ne zaman verileceği, vize türü, başvurulan şehir ve dönemsel yoğunluk gibi birçok faktöre bağlı olarak değişiklik gösterebilir. Bu yazımızda, Amerika vize randevusu bekleme süresinin neye göre şekillendiğini, süreci etkileyen faktörleri ve bu süreci...",
-    link: "#",
   },
   {
     id: 2,
@@ -22,7 +22,6 @@ const blogPosts = [
     image: "/images/blog/blog2.jpeg",
     summary:
       "Amerika vizesi başvuru süreci birçok kişi için karmaşık ve stresli olabiliyor. Özellikle Amerika vize randevusu alma aşaması, sürecin en kritik adımlarından biri. Doğru adımları atmamak ya da küçük bir hata yapmak, vize sürecinin uzamasına hatta başvurunun reddedilmesine bile neden olabiliyor. Bu yazımızda, başvuru sahiplerinin en sık yaptığı randevu hatalarını ve bu hataların nasıl önlenebileceğini detaylı şekilde ele alacağız...",
-    link: "#",
   },
   {
     id: 3,
@@ -32,7 +31,6 @@ const blogPosts = [
     image: "/images/blog/blog1.jpeg",
     summary:
       "Amerika’da eğitim almak, dünya genelinde birçok öğrencinin hayalini süslüyor. Gelişmiş eğitim sistemi, uluslararası geçerliliğe sahip diplomaları ve kültürel çeşitliliğiyle ABD, öğrenciler için cazip bir eğitim destinasyonu. Ancak bu sürece adım atmanın ilk ve en önemli aşaması, Amerika öğrenci vizesi almaktan geçiyor. Bu yazımızda, Amerika’da eğitim almak isteyenler için öğrenci vizesi nedir, nasıl alınır, hangi belgeler gereklidir ve başvuru süreci nasıl işler gibi soruların detaylı yanıtlarını...",
-    link: "#",
   },
 ];
 
@@ -53,7 +51,7 @@ export default function BlogPage() {
       : blogPosts.filter((post) => post.category === selectedCategory);
 
   return (
-    <main className="container mx-auto pt-24 px-2"> {/* Burada pt-24 eklendi */}
+    <main className="container mx-auto pt-24 px-2">
       <div className="flex gap-4 mb-4">
         <select
           value={postCount}
@@ -96,12 +94,12 @@ export default function BlogPage() {
           </div>
           <div className="flex flex-col justify-center flex-1 pl-2">
             <div className="flex items-center justify-between mb-1">
-              <a
-                href={post.link}
+              <Link
+                href={`/blog/${post.id}`}
                 className="text-blue-700 font-semibold text-lg sm:text-xl hover:underline"
               >
                 {post.title}
-              </a>
+              </Link>
               <span className="text-gray-400 text-sm">
                 {post.views} kez okundu.
               </span>

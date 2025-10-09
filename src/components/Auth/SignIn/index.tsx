@@ -4,8 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import SocialSignIn from "../SocialSignIn";
-import Logo from "@/components/Layout/Header/Logo"
+import Logo from "@/components/Layout/Header/Logo";
 import Loader from "@/components/Common/Loader";
 
 const Signin = () => {
@@ -18,6 +17,7 @@ const Signin = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  // Klasik email/password login
   const loginUser = (e: any) => {
     e.preventDefault();
 
@@ -26,7 +26,6 @@ const Signin = () => {
       .then((callback) => {
         if (callback?.error) {
           toast.error(callback?.error);
-          console.log(callback?.error);
           setLoading(false);
           return;
         }
@@ -34,14 +33,18 @@ const Signin = () => {
         if (callback?.ok && !callback?.error) {
           toast.success("Login successful");
           setLoading(false);
-          router.push("/");
+          router.push("/user"); // Kullanıcı paneline yönlendir!
         }
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err.message);
         toast.error(err.message);
       });
+  };
+
+  // Sosyal loginlerle /user'a yönlendirme
+  const socialLogin = (provider: "google" | "github") => {
+    signIn(provider, { callbackUrl: "/user" });
   };
 
   return (
@@ -50,7 +53,21 @@ const Signin = () => {
         <Logo />
       </div>
 
-      <SocialSignIn />
+      {/* Sosyal login butonları */}
+      <button
+        type="button"
+        onClick={() => socialLogin("google")}
+        className="w-full bg-red-500 text-white py-2 rounded-md mb-2"
+      >
+        Google ile Giriş Yap
+      </button>
+      <button
+        type="button"
+        onClick={() => socialLogin("github")}
+        className="w-full bg-gray-800 text-white py-2 rounded-md mb-2"
+      >
+        Github ile Giriş Yap
+      </button>
 
       <span className="z-1 relative my-8 block text-center before:content-[''] before:absolute before:h-px before:w-40% before:bg-dark_border before:bg-opacity-60 before:left-0 before:top-3 after:content-[''] after:absolute after:h-px after:w-40% after:bg-dark_border after:bg-opacity-60 after:top-3 after:right-0">
         <span className="text-body-secondary relative z-10 inline-block px-3 text-base text-white">
@@ -58,7 +75,8 @@ const Signin = () => {
         </span>
       </span>
 
-      <form onSubmit={(e) => e.preventDefault()}>
+      {/* Klasik email/password login */}
+      <form onSubmit={loginUser}>
         <div className="mb-[22px]">
           <input
             type="email"
@@ -81,7 +99,6 @@ const Signin = () => {
         </div>
         <div className="mb-9">
           <button
-            onClick={loginUser}
             type="submit"
             className="bg-primary w-full py-3 rounded-lg text-18 font-medium border border-primary hover:text-primary hover:bg-transparent"
           >

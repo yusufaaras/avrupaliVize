@@ -1,7 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/data/route": "app/api/data/route.js",
-  "/blog/page": "app/blog/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/user/page": "app/user/page.js",
+  "/user/profile/page": "app/user/profile/page.js",
+  "/user/schengen/page": "app/user/schengen/page.js"
 }

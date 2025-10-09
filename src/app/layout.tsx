@@ -1,9 +1,9 @@
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import Header from '@/app/components/Layout/Header'
-import Footer from '@/app/components/Layout/Footer'
+import ConditionalHeaderFooter from '@/app/components/Layout/ConditionalHeaderFooter'
 import ScrollToTop from '@/app/components/ScrollToTop'
 import Aoscompo from '@/utils/aos'
+
 const font = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -18,9 +18,9 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={`${font.className}`}>
         <Aoscompo>
-          <Header />
-          {children}
-          <Footer />
+          <ConditionalHeaderFooter>
+            {children}
+          </ConditionalHeaderFooter>
         </Aoscompo>
         <ScrollToTop />
       </body>
