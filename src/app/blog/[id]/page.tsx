@@ -121,9 +121,10 @@ const blogDetails = {
   },
 };
 
-export default function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = React.use(params);
-  const detail = blogDetails[id as keyof typeof blogDetails];
+export default async function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params; // Promise olduğu için await gerekiyor
+  const numId = Number(id);
+  const detail = blogDetails[numId as keyof typeof blogDetails];
 
   if (!detail) {
     return (

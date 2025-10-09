@@ -1,0 +1,15 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/api/data/route": "/api/data",
+  "/blog/[id]/page": "/blog/[id]",
+  "/blog/page": "/blog",
+  "/(site)/(auth)/signin/page": "/signin",
+  "/(site)/(auth)/signup/page": "/signup",
+  "/(site)/documentation/page": "/documentation",
+  "/_not-found/page": "/_not-found",
+  "/page": "/",
+  "/user/page": "/user",
+  "/user/schengen/page": "/user/schengen",
+  "/user/profile/page": "/user/profile",
+  "/user/Settings/page": "/user/Settings"
+}

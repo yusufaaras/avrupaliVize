@@ -1,12 +1,22 @@
 import React from 'react'
 import { signIn } from 'next-auth/react'
 
-const SocialSignIn = () => {
+type SocialSignInProps = {
+  onAnySignInClick?: () => void;
+}
+
+const SocialSignIn: React.FC<SocialSignInProps> = ({ onAnySignInClick }) => {
+  // Hem signIn hem de ekstra yönlendirme fonksiyonu çalışsın
+  const handleSignIn = (provider: 'google' | 'github') => {
+    signIn(provider)
+    if (onAnySignInClick) onAnySignInClick()
+  }
+
   return (
     <>
       <div className='flex gap-4'>
         <button
-          onClick={() => signIn('google')}
+          onClick={() => handleSignIn('google')}
           className='flex w-full items-center justify-center gap-2.5 rounded-lg p-3.5 border border-gray-200 text-black hover:bg-neutral-100 hover:cursor-pointer'>
           Sign In
           <svg
@@ -47,7 +57,7 @@ const SocialSignIn = () => {
         </button>
 
         <button
-          onClick={() => signIn('github')}
+          onClick={() => handleSignIn('github')}
           className='flex w-full items-center justify-center gap-2.5 rounded-lg p-3.5 border border-gray-200 text-black hover:bg-neutral-100 hover:cursor-pointer'>
           Sign In
           <svg

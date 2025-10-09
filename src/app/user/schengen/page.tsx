@@ -62,10 +62,19 @@ export default function SchengenAppointmentForm() {
 
   // Fatura formu için değişiklik fonksiyonu
   const handleInvoiceChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, type, checked, value } = e.target;
+    const target = e.target;
+    const name = target.name;
+    let value: string | boolean;
+    
+    if (target.type === "checkbox" && 'checked' in target) {
+      value = target.checked;
+    } else {
+      value = target.value;
+    }
+    
     setInvoiceForm({
       ...invoiceForm,
-      [name]: type === "checkbox" ? checked : value
+      [name]: value
     });
   };
 
