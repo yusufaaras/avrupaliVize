@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[744],{3778:(e,r,a)=>{"use strict";a.r(r),a.d(r,{default:()=>n});var s=a(5155);function n(){return(0,s.jsx)("div",{children:"Ayarlar sayfası buraya gelecek."})}a(2115)},8408:(e,r,a)=>{Promise.resolve().then(a.bind(a,3778))}},e=>{var r=r=>e(e.s=r);e.O(0,[441,684,358],()=>r(8408)),_N_E=e.O()}]);

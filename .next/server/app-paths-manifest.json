@@ -1,15 +1,6 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/data/route": "app/api/data/route.js",
-  "/blog/[id]/page": "app/blog/[id]/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/(site)/(auth)/signin/page": "app/(site)/(auth)/signin/page.js",
-  "/(site)/(auth)/signup/page": "app/(site)/(auth)/signup/page.js",
-  "/(site)/documentation/page": "app/(site)/documentation/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/user/page": "app/user/page.js",
-  "/user/schengen/page": "app/user/schengen/page.js",
-  "/user/profile/page": "app/user/profile/page.js",
-  "/user/Settings/page": "app/user/Settings/page.js"
+  "/api/data/route": "app/api/data/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
 }
