@@ -33,7 +33,7 @@ const Footer = () => {
           {/* COLUMN-1 */}
           <div className='col-span-1 sm:col-span-6 lg:col-span-3 flex items-center justify-center sm:justify-start mb-5 sm:mb-0'>
             <Image
-              src='/images/logo/vizelogo-white.svg'
+              src='/images/logo/vizelogo-white.png'
               alt='logo'
               width={180}
               height={45}
