@@ -39,10 +39,10 @@ export default function UserHeader() {
       <div className="flex items-center gap-3">
         <Link href="/">
           <Image
-            src='/images/logo/vizelogo.svg'
+            src='/images/logo/vizelogo.png'
             alt="Vize Logo"
-            width={85} // Daha büyük logo!
-            height={48}
+            width={150} // Daha büyük logo!
+            height={100}
             priority
             className="rounded cursor-pointer"
           />
@@ -106,7 +106,7 @@ export default function UserHeader() {
                 <span>👤</span>
                 <span>Hesabım</span>
               </Link>
-              <Link href="/logout" className="py-2 px-2 hover:bg-gray-100 rounded flex items-center gap-2 text-gray-700">
+              <Link href="/" className="py-2 px-2 hover:bg-gray-100 rounded flex items-center gap-2 text-gray-700">
                 <span>⏻</span>
                 <span>Çıkış</span>
               </Link>

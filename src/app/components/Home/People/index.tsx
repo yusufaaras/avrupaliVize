@@ -12,19 +12,19 @@ const People = () => {
               <div className='flex items-center gap-10'>
                 <div>
                   <Image
-                    src='/images/people/ataturk.svg'
-                    alt='user'
-                    width={86}
-                    height={86}
+                    src='/images/logo/vizelogo.png' 
+                    alt='global-visa'
+                    width={200}
+                    height={200}
                   />
                 </div>
                 <div className=''>
-                  <p className='text-2xl font-semibold'>Mustafa Kemal Atatürk</p>
-                  <p className='text-lg text-black/55'>Türkiye Cumhuriyeti Kurucusu</p>
+                  <p className='text-2xl font-semibold'>Avrupalı Vize Danışmanlık</p>
+                  <p className='text-lg text-black/55'>Uluslararası Vize Çözümleri</p>
                 </div>
               </div>
               <p className='font-medium text-2xl leading-9'>
-                “Milletimizi en medeni ve refah seviyesi en yüksek milletler arasında görmek istiyoruz.”
+                “Seyahat engelleri sadece haritadaki çizgilerdir; amacımız, bu engelleri güvenle aşmanıza yardımcı olmak. Uzman vize danışmanlığı ile dünyanın her yerine kolayca ulaşın.”
               </p>
             </div>
           </div>

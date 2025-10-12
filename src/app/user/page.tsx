@@ -26,6 +26,7 @@ type UsaRandevu = {
 export default function UserDashboard() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<"usa" | "schengen">("usa");
+
   // örnek schengen randevu listesi
   const [randevuList, setRandevuList] = useState<Randevu[]>([
     {
@@ -51,9 +52,15 @@ export default function UserDashboard() {
     },
   ]);
 
-  // Randevu alma sayfasına yönlendir
+  // Schengen randevuyu al
   const goToSchengenCreate = () => {
     router.push("/user/schengen");
+  };
+
+  // USA randevuyu öne çek
+  const handleUsaFastForward = (id: number) => {
+    // burada öne çekme işlemi kodunu ekleyebilirsin
+    alert("Randevunuzu öne çekmek için destek ekibimizle iletişime geçin!");
   };
 
   // Schengen randevuyu iptal et
@@ -79,11 +86,11 @@ export default function UserDashboard() {
   return (
     <div className="w-full min-h-screen bg-[#f7f7fb] pt-12">
       {/* Tab Bar */}
-      <div className="flex justify-end px-12">
+      <div className="flex justify-end px-4 md:px-12">
         <div className="flex border border-gray-300 rounded-lg overflow-hidden">
           <button
             onClick={() => setActiveTab("usa")}
-            className={`px-8 py-2 text-lg font-medium border-r border-gray-300 transition ${
+            className={`px-4 md:px-8 py-2 text-base md:text-lg font-medium border-r border-gray-300 transition ${
               activeTab === "usa" ? "bg-white text-[#414d5e] border-b-2 border-indigo-500" : "bg-transparent text-[#414d5e]"
             }`}
             style={{ cursor: "pointer" }}
@@ -92,7 +99,7 @@ export default function UserDashboard() {
           </button>
           <button
             onClick={() => setActiveTab("schengen")}
-            className={`px-8 py-2 text-lg font-medium transition ${
+            className={`px-4 md:px-8 py-2 text-base md:text-lg font-medium transition ${
               activeTab === "schengen" ? "bg-white text-[#414d5e] border-b-2 border-indigo-500" : "bg-transparent text-[#414d5e]"
             }`}
             style={{ cursor: "pointer" }}
@@ -103,19 +110,19 @@ export default function UserDashboard() {
       </div>
 
       {/* Page Heading */}
-      <h2 className="text-3xl font-semibold text-center text-[#6b7688] mt-8 mb-2">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center text-[#6b7688] mt-8 mb-2">
         {activeTab === "usa" ? "USA Randevuları" : "Schengen Randevuları"}
       </h2>
       <hr className="mb-6" />
 
       {/* Button & Filter Bar */}
       {(activeTab === "usa" || activeTab === "schengen") && (
-        <div className="flex items-center gap-4 px-12 mb-6">
+        <div className="flex flex-col md:flex-row items-center gap-4 px-4 md:px-12 mb-6">
           <div className="flex gap-3">
-            <button className="px-5 py-3 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition cursor-pointer font-medium">
+            <button className="px-4 py-2 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition cursor-pointer font-medium text-sm md:text-base">
               10 <span className="ml-1">▼</span>
             </button>
-            <button className="px-5 py-3 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition cursor-pointer font-medium flex items-center gap-2">
+            <button className="px-4 py-2 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition cursor-pointer font-medium flex items-center gap-2 text-sm md:text-base">
               <span className="material-symbols-outlined text-lg">filter_alt</span>
               Filtrele
             </button>
@@ -124,75 +131,84 @@ export default function UserDashboard() {
           {/* YÖNLENDİRME BUTONU */}
           <button
             onClick={goToSchengenCreate}
-            className="px-6 py-3 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition cursor-pointer font-medium"
+            className="px-4 py-2 md:px-6 md:py-3 bg-indigo-500 text-white rounded-lg shadow hover:bg-indigo-600 transition cursor-pointer font-medium text-sm md:text-base"
           >
-            + Randevu Al
+            {activeTab === "usa" ? "Randevuyu Öne Çek" : "+ Randevu Al"}
           </button>
         </div>
       )}
 
       {/* Main Card USA */}
       {activeTab === "usa" && (
-        <div className="mx-12 bg-white rounded-2xl shadow p-10 min-h-[180px]">
+        <div className="mx-4 md:mx-12 bg-white rounded-2xl shadow p-4 md:p-10 min-h-[180px]">
           <h3 className="font-medium mb-4 text-lg">Alınan USA Randevuları</h3>
           {usaRandevuList.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-8">
               <p className="text-xl text-gray-400 mb-2">Şu anda mevcut randevunuz bulunmamaktadır.</p>
               <p className="text-lg text-gray-400">
-                Yeni bir randevu oluşturmak için <button onClick={goToSchengenCreate} className="text-indigo-500 font-semibold underline cursor-pointer bg-transparent border-none">Randevu Al</button> butonuna tıklayınız.
+                Yeni bir randevu oluşturmak için <button onClick={goToSchengenCreate} className="text-indigo-500 font-semibold underline cursor-pointer bg-transparent border-none">Randevuyu Öne Çek</button> butonuna tıklayınız.
               </p>
             </div>
           ) : (
-            <table className="w-full border rounded-lg bg-white shadow text-left">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="p-2 font-medium">Şehir</th>
-                  <th className="p-2 font-medium">Kategori</th>
-                  <th className="p-2 font-medium">Alt Kategori</th>
-                  <th className="p-2 font-medium">Randevu Alımı</th>
-                  <th className="p-2 font-medium">Ücret</th>
-                  <th className="p-2 font-medium">Konsolosluk</th>
-                  <th className="p-2 font-medium"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {usaRandevuList.map(r => (
-                  <tr key={r.id} className="border-b">
-                    <td className="p-2">{r.sehir}</td>
-                    <td className="p-2">{r.kategori}</td>
-                    <td className="p-2">{r.altKategori}</td>
-                    <td className="p-2">{r.randevuAlimi}</td>
-                    <td className="p-2">{r.ucret}</td>
-                    <td className="p-2">{r.konsolosluk}</td>
-                    <td className="p-2">
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => handleUsaEdit(r.id)}
-                          className="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition text-sm font-medium"
-                          style={{ cursor: "pointer" }}
-                        >
-                          Randevuyu Düzenle
-                        </button>
-                        <button
-                          onClick={() => handleUsaCancel(r.id)}
-                          className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-sm font-medium"
-                          style={{ cursor: "pointer" }}
-                        >
-                          İptal Et
-                        </button>
-                      </div>
-                    </td>
+            <div className="overflow-x-auto w-full">
+              <table className="w-full border rounded-lg bg-white shadow text-left min-w-[700px]">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="p-2 font-medium">Şehir</th>
+                    <th className="p-2 font-medium">Kategori</th>
+                    <th className="p-2 font-medium">Alt Kategori</th>
+                    <th className="p-2 font-medium">Randevu Alımı</th>
+                    <th className="p-2 font-medium">Ücret</th>
+                    <th className="p-2 font-medium">Konsolosluk</th>
+                    <th className="p-2 font-medium"></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {usaRandevuList.map(r => (
+                    <tr key={r.id} className="border-b">
+                      <td className="p-2">{r.sehir}</td>
+                      <td className="p-2">{r.kategori}</td>
+                      <td className="p-2">{r.altKategori}</td>
+                      <td className="p-2">{r.randevuAlimi}</td>
+                      <td className="p-2">{r.ucret}</td>
+                      <td className="p-2">{r.konsolosluk}</td>
+                      <td className="p-2">
+                        <div className="flex flex-col md:flex-row gap-2">
+                          <button
+                            onClick={() => handleUsaEdit(r.id)}
+                            className="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition text-xs md:text-sm font-medium"
+                            style={{ cursor: "pointer" }}
+                          >
+                            Randevuyu Düzenle
+                          </button>
+                          <button
+                            onClick={() => handleUsaCancel(r.id)}
+                            className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-xs md:text-sm font-medium"
+                            style={{ cursor: "pointer" }}
+                          >
+                            İptal Et
+                          </button>
+                          <button
+                            onClick={() => handleUsaFastForward(r.id)}
+                            className="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600 transition text-xs md:text-sm font-medium"
+                            style={{ cursor: "pointer" }}
+                          >
+                            Randevuyu Öne Çek
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </div>
       )}
 
       {/* Schengen tabı (randevu listesi) */}
       {activeTab === "schengen" && (
-        <div className="mx-12 bg-white rounded-2xl shadow p-10 min-h-[180px]">
+        <div className="mx-4 md:mx-12 bg-white rounded-2xl shadow p-4 md:p-10 min-h-[180px]">
           <h3 className="font-medium mb-4 text-lg">Alınan Randevular</h3>
           {randevuList.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-8">
@@ -202,49 +218,58 @@ export default function UserDashboard() {
               </p>
             </div>
           ) : (
-            <table className="w-full border rounded-lg bg-white shadow text-left">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="p-2 font-medium">Ülke</th>
-                  <th className="p-2 font-medium">Kategori</th>
-                  <th className="p-2 font-medium">Alt Kategori</th>
-                  <th className="p-2 font-medium">Randevu Alımı</th>
-                  <th className="p-2 font-medium">Ücret</th>
-                  <th className="p-2 font-medium">VFS Hizmet</th>
-                  <th className="p-2 font-medium"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {randevuList.map(r => (
-                  <tr key={r.id} className="border-b">
-                    <td className="p-2">{r.ulke}</td>
-                    <td className="p-2">{r.kategori}</td>
-                    <td className="p-2">{r.altKategori}</td>
-                    <td className="p-2">{r.randevuAlimi}</td>
-                    <td className="p-2">{r.ucret}</td>
-                    <td className="p-2">{r.vfs}</td>
-                    <td className="p-2">
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => handleEdit(r.id)}
-                          className="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition text-sm font-medium"
-                          style={{ cursor: "pointer" }}
-                        >
-                          Randevuyu Düzenle
-                        </button>
-                        <button
-                          onClick={() => handleCancel(r.id)}
-                          className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-sm font-medium"
-                          style={{ cursor: "pointer" }}
-                        >
-                          İptal Et
-                        </button>
-                      </div>
-                    </td>
+            <div className="overflow-x-auto w-full">
+              <table className="w-full border rounded-lg bg-white shadow text-left min-w-[700px]">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="p-2 font-medium">Ülke</th>
+                    <th className="p-2 font-medium">Kategori</th>
+                    <th className="p-2 font-medium">Alt Kategori</th>
+                    <th className="p-2 font-medium">Randevu Alımı</th>
+                    <th className="p-2 font-medium">Ücret</th>
+                    <th className="p-2 font-medium">VFS Hizmet</th>
+                    <th className="p-2 font-medium"></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {randevuList.map(r => (
+                    <tr key={r.id} className="border-b">
+                      <td className="p-2">{r.ulke}</td>
+                      <td className="p-2">{r.kategori}</td>
+                      <td className="p-2">{r.altKategori}</td>
+                      <td className="p-2">{r.randevuAlimi}</td>
+                      <td className="p-2">{r.ucret}</td>
+                      <td className="p-2">{r.vfs}</td>
+                      <td className="p-2">
+                        <div className="flex flex-col md:flex-row gap-2">
+                          <button
+                            onClick={() => handleEdit(r.id)}
+                            className="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition text-xs md:text-sm font-medium"
+                            style={{ cursor: "pointer" }}
+                          >
+                            Randevuyu Düzenle
+                          </button>
+                          <button
+                            onClick={() => handleCancel(r.id)}
+                            className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition text-xs md:text-sm font-medium"
+                            style={{ cursor: "pointer" }}
+                          >
+                            İptal Et
+                          </button>
+                          <button
+                            onClick={goToSchengenCreate}
+                            className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition text-xs md:text-sm font-medium"
+                            style={{ cursor: "pointer" }}
+                          >
+                            Randevu Al
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </div>
       )}

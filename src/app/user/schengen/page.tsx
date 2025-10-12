@@ -65,263 +65,147 @@ export default function SchengenAppointmentForm() {
     const target = e.target;
     const name = target.name;
     let value: string | boolean;
-    
     if (target.type === "checkbox" && 'checked' in target) {
       value = target.checked;
     } else {
       value = target.value;
     }
-    
     setInvoiceForm({
       ...invoiceForm,
       [name]: value
     });
   };
 
+  // Responsive form & tablo için Tailwind + overflow-x-auto
   return (
-    <div style={{
-      background: "#fff",
-      padding: "24px",
-      borderRadius: "18px",
-      boxShadow: "0 2px 8px #f0f1f2",
-      maxWidth: "1100px",
-      margin: "32px auto",
-      fontFamily: "Inter, Arial, sans-serif"
-    }}>
-      {/* Fiyat Tablosu - EN ÜSTTE */}
-      <div style={{marginBottom:"38px"}}>
-        <div style={{
-          borderTop: "2px solid #f3b04b",
-          borderBottom: "2px solid #f3b04b",
-          marginBottom: "8px",
-          textAlign: "center",
-          fontWeight: 600,
-          color: "#7d7d7d",
-          fontSize: "18px"
-        }}>
-          Fiyat Tablosu
-        </div>
-        <table style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          background: "#f8f9fb",
-          borderRadius: "12px",
-          overflow: "hidden",
-          fontSize: "16px",
-        }}>
-          <thead>
-            <tr style={{background: "#fff", color: "#7d7d7d"}}>
-              <th style={thStyle}>Ülke</th>
-              <th style={thStyle}>Kategori</th>
-              <th style={thStyle}>Alt Kategori</th>
-              <th style={thStyle}>Randevu Alımı</th>
-              <th style={thStyle}>Ücret</th>
-              <th style={thStyle}>(VFS, AS VISA...) Hizmet Bedeli</th>
-            </tr>
-          </thead>
-          <tbody>
-            {PRICING.map((row, i) => (
-              <tr key={row.ulke} style={{background: i % 2 ? "#f4f6f8" : "#fff"}}>
-                <td style={tdStyle}>{row.ulke}</td>
-                <td style={tdStyle}>{row.kategori}</td>
-                <td style={tdStyle}>{row.altKategori}</td>
-                <td style={tdStyle}>{row.randevu}</td>
-                <td style={{...tdStyle, fontWeight:600}}>{row.ucret}</td>
-                <td style={tdStyle}>
-                  {row.hizmetBedeli ? (
-                    <span style={{color:"#27ae60", fontWeight:600}}>Dahil <span style={{fontSize:"18px"}}>✅</span></span>
-                  ) : (
-                    <span style={{color:"#e53e3e", fontWeight:600}}>Hariç <span style={{fontSize:"18px"}}>❌</span></span>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <div className="bg-white rounded-2xl shadow-lg max-w-4xl mx-auto my-8 px-4 py-6 md:p-8 font-sans">
+      
 
       {/* Schengen Başvuru Formu */}
-      <h2 style={{fontWeight: 600, fontSize: "20px", marginBottom: "18px"}}>Schengen Randevu Alma Detayları</h2>
+      <h2 className="font-semibold text-xl mb-5">Schengen Randevu Alma Detayları</h2>
       <form>
-        <div style={{display: "flex", gap: "24px", marginBottom: "18px"}}>
-          <div style={{flex:1}}>
+        <div className="flex flex-col md:flex-row gap-4 mb-4">
+          <div className="flex-1">
             <label>İSİM</label>
-            <input name="isim" value={form.isim} onChange={handleChange} style={inputStyle} />
+            <input name="isim" value={form.isim} onChange={handleChange} className={inputClass} />
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>SOYİSİM</label>
-            <input name="soyisim" value={form.soyisim} onChange={handleChange} style={inputStyle} />
+            <input name="soyisim" value={form.soyisim} onChange={handleChange} className={inputClass} />
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>CİNSİYET</label>
-            <select name="cinsiyet" value={form.cinsiyet} onChange={handleChange} style={inputStyle}>
+            <select name="cinsiyet" value={form.cinsiyet} onChange={handleChange} className={inputClass}>
               {GENDERS.map(g => <option key={g} value={g}>{g}</option>)}
             </select>
           </div>
         </div>
-        <div style={{
-          borderTop: "2px solid #f3b04b", 
-          borderBottom: "2px solid #f3b04b", 
-          margin: "18px 0", 
-          textAlign: "center", 
-          fontWeight: 600, 
-          color: "#7d7d7d"
-        }}>
+        <div className="border-t-2 border-b-2 border-yellow-400 my-4 text-center font-semibold text-gray-600">
           Randevu Detayları
         </div>
-        <div style={{display: "flex", gap: "24px", marginBottom: "18px"}}>
-          <div style={{flex:1}}>
+        <div className="flex flex-col md:flex-row gap-4 mb-4">
+          <div className="flex-1">
             <label>BAŞVURU YAPILAN ÜLKE</label>
-            <select name="ulke" value={form.ulke} onChange={handleChange} style={inputStyle}>
+            <select name="ulke" value={form.ulke} onChange={handleChange} className={inputClass}>
               {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>VİZE TİPİ</label>
-            <select name="vizeTipi" value={form.vizeTipi} onChange={handleChange} style={inputStyle}>
+            <select name="vizeTipi" value={form.vizeTipi} onChange={handleChange} className={inputClass}>
               {VISA_TYPES.map(v => <option key={v} value={v}>{v}</option>)}
             </select>
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>GİDİŞ AMACI</label>
-            <select name="gidisAmaci" value={form.gidisAmaci} onChange={handleChange} style={inputStyle}>
+            <select name="gidisAmaci" value={form.gidisAmaci} onChange={handleChange} className={inputClass}>
               {PURPOSES.map(p => <option key={p} value={p}>{p}</option>)}
             </select>
           </div>
         </div>
-        <div style={{marginBottom: "18px"}}>
+        <div className="mb-4">
           <label>TERCİH EDİLEN ŞEHİR(LER)</label>
-          <input name="sehirler" value={form.sehirler} onChange={handleChange} style={inputStyle} />
+          <input name="sehirler" value={form.sehirler} onChange={handleChange} className={inputClass} />
         </div>
-        <div style={{
-          borderTop: "2px solid #d9d9d9", 
-          margin: "18px 0 0 0", 
-          textAlign: "left",
-          fontWeight: 600, 
-          color: "#7d7d7d"
-        }}>
+        <div className="border-t-2 border-gray-200 mt-4 text-left font-semibold text-gray-600">
           Pasaport Bilgileri
         </div>
-        <div style={{display: "flex", gap: "24px", marginBottom: "18px"}}>
-          <div style={{flex:1}}>
+        <div className="flex flex-col md:flex-row gap-4 mb-4 mt-2">
+          <div className="flex-1">
             <label>MİLLİYET</label>
-            <select name="milliyet" value={form.milliyet} onChange={handleChange} style={inputStyle}>
+            <select name="milliyet" value={form.milliyet} onChange={handleChange} className={inputClass}>
               {NATIONALITIES.map(n => <option key={n} value={n}>{n}</option>)}
             </select>
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>PASAPORT NO</label>
-            <input name="pasaportNo" value={form.pasaportNo} onChange={handleChange} style={inputStyle} />
+            <input name="pasaportNo" value={form.pasaportNo} onChange={handleChange} className={inputClass} />
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>PASAPORTUN VERİLDİĞİ YER</label>
-            <input name="pasaportVerildigiYer" value={form.pasaportVerildigiYer} onChange={handleChange} style={inputStyle} />
+            <input name="pasaportVerildigiYer" value={form.pasaportVerildigiYer} onChange={handleChange} className={inputClass} />
           </div>
         </div>
-        <div style={{display: "flex", gap: "24px", marginBottom: "18px"}}>
-          <div style={{flex:1}}>
+        <div className="flex flex-col md:flex-row gap-4 mb-4">
+          <div className="flex-1">
             <label>PASAPORT VERİLİŞ TARİHİ (DD/MM/YYYY)</label>
-            <input name="pasaportVerilis" value={form.pasaportVerilis} onChange={handleChange} style={inputStyle} />
+            <input name="pasaportVerilis" value={form.pasaportVerilis} onChange={handleChange} className={inputClass} />
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>PASAPORT SON GEÇERLİLİK TARİHİ (DD/MM/YYYY)</label>
-            <input name="pasaportSonGecerlilik" value={form.pasaportSonGecerlilik} onChange={handleChange} style={inputStyle} />
+            <input name="pasaportSonGecerlilik" value={form.pasaportSonGecerlilik} onChange={handleChange} className={inputClass} />
           </div>
-          <div style={{flex:1}}>
+          <div className="flex-1">
             <label>DOĞUM TARİHİ (DD/MM/YYYY)</label>
-            <input name="dogumTarihi" value={form.dogumTarihi} onChange={handleChange} style={inputStyle} />
+            <input name="dogumTarihi" value={form.dogumTarihi} onChange={handleChange} className={inputClass} />
           </div>
         </div>
-        <div style={{marginBottom: "18px"}}>
+        <div className="mb-4">
           <label>DOĞUM YERİ</label>
-          <input name="dogumYeri" value={form.dogumYeri} onChange={handleChange} style={inputStyle} />
+          <input name="dogumYeri" value={form.dogumYeri} onChange={handleChange} className={inputClass} />
         </div>
-        <div style={{
-          borderTop: "2px solid #d9d9d9", 
-          margin: "18px 0 0 0", 
-          textAlign: "left", 
-          fontWeight: 600, 
-          color: "#7d7d7d"
-        }}>
+        <div className="border-t-2 border-gray-200 mt-4 text-left font-semibold text-gray-600">
           Ödeme Yöntemi
         </div>
-        <div style={{marginTop:"24px", marginBottom:"12px", textAlign:"center"}}>
-          <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="secure checkout" style={{height:"24px",marginRight:"8px"}} />
-          <span style={{fontWeight:500}}>Guaranteed safe & secure checkout</span>
-          <img src="https://cdn.worldvectorlogo.com/logos/stripe-3.svg" alt="stripe" style={{height:"24px",marginLeft:"8px"}} />
+        <div className="flex items-center justify-center gap-2 mt-4 mb-2 flex-wrap">
+          <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="secure checkout" className="h-6" />
+          <span className="font-medium">Guaranteed safe & secure checkout</span>
+          <img src="https://cdn.worldvectorlogo.com/logos/stripe-3.svg" alt="stripe" className="h-6" />
         </div>
-        <div style={{display:"flex",justifyContent:"center",gap:"12px",margin:"10px 0"}}>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="visa" style={paymentIconStyle} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="mastercard" style={paymentIconStyle} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/American_Express_logo_%282018%29.svg" alt="amex" style={paymentIconStyle} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Discover_Card_logo.svg" alt="discover" style={paymentIconStyle} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Maestro_logo.svg" alt="maestro" style={paymentIconStyle} />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/JCB_logo.svg" alt="jcb" style={paymentIconStyle} />
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="visa" className={iconClass} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="mastercard" className={iconClass} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/American_Express_logo_%282018%29.svg" alt="amex" className={iconClass} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Discover_Card_logo.svg" alt="discover" className={iconClass} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Maestro_logo.svg" alt="maestro" className={iconClass} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/JCB_logo.svg" alt="jcb" className={iconClass} />
         </div>
-        <div style={{
-          border: "2px solid #ececec",
-          borderRadius: "8px",
-          background: "#fafafa",
-          padding: "18px",
-          marginTop: "18px",
-          textAlign: "center"
-        }}>
-          <img src="https://cdn-icons-png.flaticon.com/512/126/126486.png" alt="credit card" style={{height:"32px",marginBottom:"8px"}} />
-          <div style={{fontWeight:600, fontSize:"18px", marginBottom:"8px"}}>Kredi Kartı ile Ödeme</div>
-          <div style={{color:"#e53e3e", fontWeight:500, marginBottom:"8px"}}>
+        <div className="border-2 border-gray-200 rounded-lg bg-gray-50 p-4 mt-4 text-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/126/126486.png" alt="credit card" className="h-8 mx-auto mb-2" />
+          <div className="font-semibold text-lg mb-2">Kredi Kartı ile Ödeme</div>
+          <div className="text-red-600 font-medium mb-2">
             Stripe güvenli ödeme linki için WhatsApp üzerinden destek alabilirsiniz.<br/>
-            <span style={{color:"#e53e3e", fontWeight:700}}>+90 850 308 0876</span>
+            <span className="text-red-700 font-bold">+90 850 308 0876</span>
           </div>
         </div>
       </form>
 
       {/* Fatura Detayları Bölümü */}
-      <div style={{
-        marginTop: "40px",
-        background: "#fff",
-        borderRadius: "18px",
-        boxShadow: "0 2px 8px #f0f1f2",
-        padding: "32px"
-      }}>
-        <div style={{
-          background: "#6366f1",
-          color: "#fff",
-          fontWeight: 600,
-          fontSize: "20px",
-          borderRadius: "8px",
-          padding: "12px 0",
-          textAlign: "center",
-          marginBottom: "24px"
-        }}>
+      <div className="mt-10 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+        <div className="bg-indigo-500 text-white font-semibold text-lg rounded-lg py-3 text-center mb-6">
           Fatura Detayları
         </div>
-        <div style={{display:"flex", justifyContent:"center", marginBottom:"20px"}}>
+        <div className="flex justify-center mb-6">
           <button
             type="button"
-            style={{
-              background: invoiceType === "bireysel" ? "#6366f1" : "#fff",
-              color: invoiceType === "bireysel" ? "#fff" : "#6366f1",
-              fontWeight: 600,
-              border: "1px solid #6366f1",
-              borderRadius: "8px 0 0 8px",
-              padding: "8px 32px",
-              cursor: "pointer"
-            }}
+            className={`font-semibold border border-indigo-500 rounded-l-lg px-6 py-2 ${invoiceType === "bireysel" ? "bg-indigo-500 text-white" : "bg-white text-indigo-500"}`}
             onClick={() => setInvoiceType("bireysel")}
           >
             Bireysel
           </button>
           <button
             type="button"
-            style={{
-              background: invoiceType === "kurumsal" ? "#6366f1" : "#fff",
-              color: invoiceType === "kurumsal" ? "#fff" : "#6366f1",
-              fontWeight: 600,
-              border: "1px solid #6366f1",
-              borderRadius: "0 8px 8px 0",
-              padding: "8px 32px",
-              cursor: "pointer"
-            }}
+            className={`font-semibold border border-indigo-500 rounded-r-lg px-6 py-2 ${invoiceType === "kurumsal" ? "bg-indigo-500 text-white" : "bg-white text-indigo-500"}`}
             onClick={() => setInvoiceType("kurumsal")}
           >
             Kurumsal
@@ -329,154 +213,127 @@ export default function SchengenAppointmentForm() {
         </div>
         {/* Bireysel/Kurumsal Fatura Alanları */}
         {invoiceType === "bireysel" ? (
-          <div style={{marginBottom:"24px"}}>
-            <div style={{display: "flex", gap:"24px", marginBottom:"18px"}}>
-              <div style={{flex:1}}>
+          <div className="mb-6">
+            <div className="flex flex-col md:flex-row gap-4 mb-4">
+              <div className="flex-1">
                 <label>İsim</label>
-                <input name="isim" value={invoiceForm.isim} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="isim" value={invoiceForm.isim} onChange={handleInvoiceChange} className={inputClass} />
               </div>
-              <div style={{flex:1}}>
+              <div className="flex-1">
                 <label>Soyisim</label>
-                <input name="soyisim" value={invoiceForm.soyisim} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="soyisim" value={invoiceForm.soyisim} onChange={handleInvoiceChange} className={inputClass} />
               </div>
-              <div style={{flex:1}}>
+              <div className="flex-1">
                 <label>TC Kimlik No (Zorunlu Değil)</label>
-                <input name="tcKimlik" value={invoiceForm.tcKimlik} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="tcKimlik" value={invoiceForm.tcKimlik} onChange={handleInvoiceChange} className={inputClass} />
               </div>
             </div>
-            <div style={{marginBottom:"10px"}}>
+            <div className="mb-2">
               <label>
-                <input type="checkbox" name="efatura" checked={invoiceForm.efatura} onChange={handleInvoiceChange} />
-                {" "}E-fatura mükellefiyim
+                <input type="checkbox" name="efatura" checked={invoiceForm.efatura} onChange={handleInvoiceChange} className="mr-2" />
+                E-fatura mükellefiyim
               </label>
             </div>
-            <div style={{display: "flex", gap:"24px", marginBottom:"18px"}}>
-              <div style={{flex:1}}>
+            <div className="flex flex-col md:flex-row gap-4 mb-4">
+              <div className="flex-1">
                 <label>Ülke</label>
-                <select name="ulke" value={invoiceForm.ulke} onChange={handleInvoiceChange} style={inputStyle}>
+                <select name="ulke" value={invoiceForm.ulke} onChange={handleInvoiceChange} className={inputClass}>
                   <option value="">Seç</option>
                   {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
-              <div style={{flex:2}}>
+              <div className="flex-[2]">
                 <label>Adres</label>
-                <input name="adres" value={invoiceForm.adres} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="adres" value={invoiceForm.adres} onChange={handleInvoiceChange} className={inputClass} />
               </div>
-              <div style={{flex:1}}>
+              <div className="flex-1">
                 <label>Posta Kodu</label>
-                <input name="postaKodu" value={invoiceForm.postaKodu} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="postaKodu" value={invoiceForm.postaKodu} onChange={handleInvoiceChange} className={inputClass} />
               </div>
             </div>
           </div>
         ) : (
-          <div style={{marginBottom:"24px"}}>
-            <div style={{display: "flex", gap:"24px", marginBottom:"18px"}}>
-              <div style={{flex:1}}>
+          <div className="mb-6">
+            <div className="flex flex-col md:flex-row gap-4 mb-4">
+              <div className="flex-1">
                 <label>Şirket Adı</label>
-                <input name="sirketAdi" value={invoiceForm.sirketAdi} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="sirketAdi" value={invoiceForm.sirketAdi} onChange={handleInvoiceChange} className={inputClass} />
               </div>
-              <div style={{flex:1}}>
+              <div className="flex-1">
                 <label>Vergi No</label>
-                <input name="vergiNo" value={invoiceForm.vergiNo} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="vergiNo" value={invoiceForm.vergiNo} onChange={handleInvoiceChange} className={inputClass} />
               </div>
-              <div style={{flex:1}}>
+              <div className="flex-1">
                 <label>Vergi Dairesi</label>
-                <input name="vergiDairesi" value={invoiceForm.vergiDairesi} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="vergiDairesi" value={invoiceForm.vergiDairesi} onChange={handleInvoiceChange} className={inputClass} />
               </div>
             </div>
-            <div style={{display: "flex", gap:"24px", marginBottom:"18px"}}>
-              <div style={{flex:1}}>
+            <div className="flex flex-col md:flex-row gap-4 mb-4">
+              <div className="flex-1">
                 <label>Ülke</label>
-                <select name="ulke" value={invoiceForm.ulke} onChange={handleInvoiceChange} style={inputStyle}>
+                <select name="ulke" value={invoiceForm.ulke} onChange={handleInvoiceChange} className={inputClass}>
                   <option value="">Seç</option>
                   {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
-              <div style={{flex:2}}>
+              <div className="flex-[2]">
                 <label>Adres</label>
-                <input name="adres" value={invoiceForm.adres} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="adres" value={invoiceForm.adres} onChange={handleInvoiceChange} className={inputClass} />
               </div>
-              <div style={{flex:1}}>
+              <div className="flex-1">
                 <label>Posta Kodu</label>
-                <input name="postaKodu" value={invoiceForm.postaKodu} onChange={handleInvoiceChange} style={inputStyle} />
+                <input name="postaKodu" value={invoiceForm.postaKodu} onChange={handleInvoiceChange} className={inputClass} />
               </div>
             </div>
           </div>
         )}
 
         {/* Sipariş Bilgileri */}
-        <div style={{
-          borderTop: "2px solid #f3b04b", 
-          margin: "18px 0", 
-          textAlign: "center", 
-          fontWeight: 600, 
-          color: "#7d7d7d"
-        }}>
+        <div className="border-t-2 border-yellow-400 my-4 text-center font-semibold text-gray-600">
           Sipariş Bilgileri
         </div>
-        <div style={{display:"flex", gap:"48px", alignItems:"flex-start", marginTop:"24px"}}>
-          <div style={{flex:1}}>
-            <div style={{marginBottom:"14px", fontWeight:600}}>RANDEVU ALIMI</div>
-            <div style={{marginBottom:"10px"}}>
-              <label style={{display:"flex", alignItems:"center", gap:"8px", fontWeight:500}}>
-                <input type="radio" name="randevuTipi" checked={true} disabled style={{accentColor: "#6366f1"}} />
+        <div className="flex flex-col md:flex-row gap-8 items-start mt-6">
+          <div className="flex-1">
+            <div className="mb-3 font-semibold">RANDEVU ALIMI</div>
+            <div className="mb-2">
+              <label className="flex items-center gap-2 font-medium">
+                <input type="radio" name="randevuTipi" checked={true} disabled className="accent-indigo-500" />
                 BOT İLE
               </label>
             </div>
-            <div style={{marginBottom:"14px"}}>
-              <label style={{display:"flex", alignItems:"center", gap:"8px", color:"#e53e3e", fontWeight:400}}>
+            <div className="mb-3">
+              <label className="flex items-center gap-2 text-red-600 font-normal">
                 <input type="radio" name="randevuTipi" checked={false} disabled />
-                MANUEL <span style={{fontSize:"13px"}}>(Bu ülke için geçerli değil)</span>
+                MANUEL <span className="text-xs">(Bu ülke için geçerli değil)</span>
               </label>
             </div>
-            <div style={{marginBottom:"18px"}}>
-              <div style={{
-                background:"#e0e7ff",
-                color:"#6366f1",
-                padding:"8px 16px",
-                borderRadius:"5px",
-                fontWeight:600,
-                display:"inline-block"
-              }}>
+            <div className="mb-3">
+              <div className="bg-indigo-100 text-indigo-500 px-4 py-2 rounded font-semibold inline-block">
                 BULGARİSTAN - TURISTIK - KISA SÜRELİ VIZE (C)
               </div>
             </div>
           </div>
-          <div style={{flex:2}}>
-            <div style={{marginBottom:"10px", fontWeight:600}}>Özet:</div>
-            <div style={{fontSize:"22px", fontWeight:600, marginBottom:"8px"}}>€200.00</div>
-            <div style={{marginBottom:"8px", color:"#575757"}}>
-              (VFS, As Visa...) hizmet bedeli dahil <span style={{color:"#27ae60", fontSize:"18px"}}>✅</span>
+          <div className="flex-[2]">
+            <div className="mb-2 font-semibold">Özet:</div>
+            <div className="text-2xl font-semibold mb-2">€200.00</div>
+            <div className="mb-2 text-gray-600">
+              (VFS, As Visa...) hizmet bedeli dahil <span className="text-green-600 text-lg">✅</span>
             </div>
-            <div style={{
-              background:"#e53e3e",
-              color:"#fff",
-              fontWeight:600,
-              padding:"6px 12px",
-              borderRadius:"5px",
-              marginBottom:"8px",
-              fontSize:"15px"
-            }}>
+            <div className="bg-red-600 text-white font-semibold px-3 py-2 rounded mb-2 text-base">
               Prime Time randevu gelmesi durumunda 30 EUR ek ücret VFS şubesinden tahsil edilecektir. (Sadece FR ve BG için)
             </div>
-            <div style={{marginBottom:"10px"}}>
-              <label style={{
-                fontWeight:500,
-                fontSize:"17px",
-                display:"flex",
-                alignItems:"center",
-                gap:"8px"
-              }}>
+            <div className="mb-2">
+              <label className="font-medium text-base flex items-center gap-2">
                 <input 
                   type="checkbox" 
                   checked={mesafeliSozlesme} 
                   onChange={e => setMesafeliSozlesme(e.target.checked)} 
-                  style={{accentColor:"#6366f1"}} 
+                  className="accent-indigo-500"
                 />
                 <span>
                   <a 
                     href="#" 
-                    style={{color:"#6366f1", textDecoration:"underline"}}
+                    className="text-indigo-500 underline"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
@@ -488,22 +345,50 @@ export default function SchengenAppointmentForm() {
             </div>
             <button 
               type="button"
-              style={{
-                background:"#6366f1",
-                color:"#fff",
-                fontWeight:600,
-                fontSize:"18px",
-                borderRadius:"8px",
-                padding:"12px 32px",
-                border:"none",
-                cursor:"pointer",
-                marginTop:"12px"
-              }}
+              className="bg-indigo-500 text-white font-semibold text-lg rounded-lg px-8 py-3 border-none mt-4 cursor-pointer hover:bg-indigo-600"
               //onClick={...} // Siparişi başlatma fonksiyonu burada eklenmeli
             >
               Taramayı Başlat
             </button>
           </div>
+        </div>
+      </div><br/><br/>
+      {/* Fiyat Tablosu - EN ÜSTTE */}
+      <div className="mb-10">
+        <div className="border-t-2 border-b-2 border-yellow-400 mb-2 text-center font-semibold text-gray-600 text-lg">
+          Fiyat Tablosu
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse bg-gray-100 rounded-lg text-sm">
+            <thead>
+              <tr className="bg-white text-gray-600">
+                <th className="p-3 font-semibold">Ülke</th>
+                <th className="p-3 font-semibold">Kategori</th>
+                <th className="p-3 font-semibold">Alt Kategori</th>
+                <th className="p-3 font-semibold">Randevu Alımı</th>
+                <th className="p-3 font-semibold">Ücret</th>
+                <th className="p-3 font-semibold">(VFS, AS VISA...) Hizmet Bedeli</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PRICING.map((row, i) => (
+                <tr key={row.ulke} className={i % 2 ? "bg-gray-50" : "bg-white"}>
+                  <td className="p-3">{row.ulke}</td>
+                  <td className="p-3">{row.kategori}</td>
+                  <td className="p-3">{row.altKategori}</td>
+                  <td className="p-3">{row.randevu}</td>
+                  <td className="p-3 font-semibold">{row.ucret}</td>
+                  <td className="p-3">
+                    {row.hizmetBedeli ? (
+                      <span className="text-green-600 font-semibold">Dahil <span className="text-lg">✅</span></span>
+                    ) : (
+                      <span className="text-red-600 font-semibold">Hariç <span className="text-lg">❌</span></span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
       {/* Fatura Detayları Sonu */}
@@ -511,37 +396,5 @@ export default function SchengenAppointmentForm() {
   );
 }
 
-const inputStyle: React.CSSProperties = {
-  width: "100%",
-  padding: "10px 12px",
-  borderRadius: "8px",
-  border: "1px solid #e0e0e0",
-  marginTop: "4px",
-  marginBottom: "8px",
-  fontSize: "16px",
-  background: "#fafbfc"
-};
-
-const paymentIconStyle: React.CSSProperties = {
-  height: "32px",
-  background: "#fff",
-  borderRadius: "4px",
-  padding: "2px 6px",
-  boxShadow: "0 1px 4px #ececec"
-};
-
-const thStyle: React.CSSProperties = {
-  padding: "14px 8px",
-  textAlign: "left",
-  fontWeight: 600,
-  background: "#fff",
-  borderBottom: "1px solid #ececec",
-  fontSize: "15px"
-};
-
-const tdStyle: React.CSSProperties = {
-  padding: "14px 8px",
-  textAlign: "left",
-  borderBottom: "1px solid #ececec",
-  fontSize: "15px"
-};
+const inputClass = "w-full px-3 py-2 rounded-lg border border-gray-300 mt-1 mb-2 text-base bg-gray-50";
+const iconClass = "h-8 bg-white rounded px-1 shadow";
