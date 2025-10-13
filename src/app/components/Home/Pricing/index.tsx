@@ -94,7 +94,7 @@ const Pricing = () => {
                   className='text-xl font-medium text-white w-full bg-primary hover:text-white group-hover:bg-deepSlate group-hover:border-deepSlate border-2 border-primary rounded-full py-4 px-12 mb-8 hover:cursor-pointer'
                   onClick={() => setIsSignInOpen(true)}
                 >
-                  Randevu Al
+                  Randevu Oluştur
                 </button>
                 <p className='text-4xl sm:text-5xl font-semibold text-midnight_text mb-3 group-hover:text-white text-center'>
                   ${item.price.yearly}
@@ -117,38 +117,38 @@ const Pricing = () => {
 
         {/* Schengen Vizesi Planı - Ortada, ayrı bir satırda */}
         <div className="flex justify-center mt-16 mb-6">
-          <div className="pt-7 pb-7 px-7 bg-white rounded-2xl shadow-2xl border-2 border-red-600 max-w-lg w-full flex flex-col items-center relative hover:bg-red-600 group transition-all duration-300 min-h-[275px]">
-            <Image
-              src="/images/hero/OzgurlukHeykeli.png"
-              alt="Schengen Visa"
-              width={150}
-              height={150}
-              className="mb-4"
-            />
-            <h3 className="mb-3 text-2xl font-bold text-red-600 group-hover:text-white text-center">
-              Schengen Vizesi Al
-            </h3>
-            <p className="text-base text-black/70 group-hover:text-white/80 text-center mb-4 max-w-xs">
-              26 Avrupa ülkesinde seyahat özgürlüğünüz için hızlı Schengen vizesi danışmanlığı!
-            </p>
-            <button
-              className="text-red-600 font-semibold bg-white hover:bg-red-600 hover:text-white border-2 border-red-600 rounded-full py-2 px-7 mb-3 cursor-pointer transition-all duration-300"
-              onClick={() => setIsSignInOpen(true)}
-            >
-              Schengen Vizesi Al
-            </button>
-            <ul className="mb-0">
-              <li className="flex gap-2 items-center pt-2 text-black/60 group-hover:text-white/70 text-base">
-                <Icon icon='tabler:circle-check-filled' className='text-lg text-emerald-400' />
-                <span>26 Avrupa ülkesinde geçerli vize</span>
-              </li>
-              <li className="flex gap-2 items-center pt-2 text-black/60 group-hover:text-white/70 text-base">
-                <Icon icon='tabler:circle-check-filled' className='text-lg text-emerald-400' />
-                <span>Uzman danışmanlık desteği</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <div className="pt-7 pb-7 px-7 bg-white rounded-2xl shadow-xl border border-red-400 max-w-lg w-full flex flex-col items-center relative hover:bg-red-50 group transition-all duration-300 min-h-[275px]">
+    <h3 className="mb-3 text-2xl font-bold text-red-600 group-hover:text-red-700 text-center transition-all">
+      Schengen randevu
+    </h3>
+    <Image
+      src="/images/hero/schengen.png"
+      alt="Schengen Visa"
+      width={130}
+      height={130}
+      className="mb-4"
+    />
+    <p className="text-base text-black/70 group-hover:text-black/80 text-center mb-4 max-w-xs transition-all">
+      26 Avrupa ülkesinde seyahat özgürlüğünüz için hızlı Schengen vizesi danışmanlığı!
+    </p>
+    <button
+      className="text-white font-semibold bg-red-500 hover:bg-red-600 border-none rounded-full py-2 px-7 mb-3 cursor-pointer transition-all duration-300 shadow-sm"
+      onClick={() => setIsSignInOpen(true)}
+    >
+      Randevu Oluştur
+    </button>
+    <ul className="mb-0">
+      <li className="flex gap-2 items-center pt-2 text-black/60 group-hover:text-red-700 text-base transition-all">
+        <Icon icon='tabler:circle-check-filled' className='text-lg text-emerald-400' />
+        <span>26 Avrupa ülkesinde geçerli vize</span>
+      </li>
+      <li className="flex gap-2 items-center pt-2 text-black/60 group-hover:text-red-700 text-base transition-all">
+        <Icon icon='tabler:circle-check-filled' className='text-lg text-emerald-400' />
+        <span>Uzman danışmanlık desteği</span>
+      </li>
+    </ul>
+  </div>
+</div>
       </div>
 
       {/* Sign In Modal */}

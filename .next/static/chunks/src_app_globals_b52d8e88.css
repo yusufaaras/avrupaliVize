@@ -76,6 +76,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-50: oklch(97.1% .013 17.38);
     --color-red-100: oklch(93.6% .032 17.717);
     --color-red-200: oklch(88.5% .062 18.334);
     --color-red-300: oklch(80.8% .114 19.571);
@@ -1519,6 +1520,10 @@
     border-color: var(--color-primary);
   }
 
+  .border-red-400 {
+    border-color: var(--color-red-400);
+  }
+
   .border-red-600 {
     border-color: var(--color-red-600);
   }
@@ -2443,8 +2448,26 @@
   }
 
   @media (hover: hover) {
+    .group-hover\:text-black\/80:is(:where(.group):hover *) {
+      color: #000c;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .group-hover\:text-black\/80:is(:where(.group):hover *) {
+        color: color-mix(in oklab, var(--color-black) 80%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
     .group-hover\:text-primary:is(:where(.group):hover *) {
       color: var(--color-primary);
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:text-red-700:is(:where(.group):hover *) {
+      color: var(--color-red-700);
     }
   }
 
@@ -2779,6 +2802,12 @@
       .hover\:bg-primary\/20:hover {
         background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
       }
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-red-50:hover {
+      background-color: var(--color-red-50);
     }
   }
 

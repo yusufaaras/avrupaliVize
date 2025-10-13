@@ -1,15 +1,17 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { Icon } from '@iconify/react/dist/iconify.js'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { featureData } from '@/app/types/featuredata'
 import FeatureSkeleton from '@/app/Skeleton/Features'
+import Signin from '@/app/components/Auth/SignIn'
 
 const Features = () => {
   const [features, setFeatures] = useState<featureData[]>([])
   const [loading, setLoading] = useState(true)
+  const [isSignInOpen, setIsSignInOpen] = useState(false)
+  const signInRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,28 @@ const Features = () => {
     }
     fetchData()
   }, [])
+
+  // Modal dışına tıklanınca kapat
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        signInRef.current &&
+        !signInRef.current.contains(event.target as Node)
+      ) {
+        setIsSignInOpen(false)
+      }
+    }
+    if (isSignInOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.body.style.overflow = ''
+    }
+  }, [isSignInOpen])
 
   return (
     <section id='features'>
@@ -56,16 +80,37 @@ const Features = () => {
                   <p className='text-lg text-black/50 my-2 leading-6'>
                     {item.paragraph}
                   </p>
-                  <Link
-                    href={'/#hizmetler'}
-                    className='text-primary hover:text-blue-700 text-xl font-medium flex items-center gap-2 mt-6 pb-2'>
-                    Detaylı Bilgi
-                    <Icon icon='tabler:arrow-right' className='text-2xl' />
-                  </Link>
+                  <button
+  className='text-primary hover:text-blue-700 text-xl font-medium flex items-center gap-2 mt-6 pb-2 cursor-pointer'
+  onClick={() => setIsSignInOpen(true)}
+>
+  Detaylı Bilgi
+  <Icon icon='tabler:arrow-right' className='text-2xl' />
+</button>
                 </div>
               ))}
         </div>
       </div>
+      {isSignInOpen && (
+        <div className='fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
+          <div
+            ref={signInRef}
+            className='relative mx-auto w-full bg-white max-w-md overflow-hidden rounded-lg px-8 pt-14 pb-8 text-center bg-dark_grey/90 backdrop-blur-md'
+          >
+            <button
+              onClick={() => setIsSignInOpen(false)}
+              className='absolute top-0 right-0 mr-8 mt-8 dark:invert hover:cursor-pointer'
+              aria-label='Close Sign In Modal'
+            >
+              <Icon
+                icon='tabler:currency-xrp'
+                className='text-white hover:text-primary text-24 inline-block me-2'
+              />
+            </button>
+            <Signin />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

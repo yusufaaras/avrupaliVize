@@ -63,7 +63,7 @@ const Banner = () => {
               <p className='text-black/75 text-lg font-normal text-center lg:text-start max-w-lg mx-auto lg:mx-0'>
                 Vize başvurularınızda hızlı ve sorunsuz hizmet. Hedefinize kolayca ulaşın, işlemleri uzman ekibimize bırakın! <br />
                 <span className="font-semibold text-primary">
-                  ABD, İngiltere ve Schengen için randevu oluşturun.
+                  ‘ABD, UK ve Schengen vize randevularınız için güvenilir adres!’ 
                 </span>
               </p>
               <div className='mx-auto lg:mx-0'>
