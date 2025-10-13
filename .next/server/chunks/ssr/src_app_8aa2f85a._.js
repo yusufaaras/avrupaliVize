@@ -442,7 +442,7 @@ const Features = ()=>{
                         }).map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$Skeleton$2f$Features$2f$index$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, i, false, {
                                 fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                 lineNumber: 66,
-                                columnNumber: 17
+                                columnNumber: 15
                             }, this)) : features.map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-white rounded-2xl p-5 shadow-lg",
                                 children: [
@@ -455,7 +455,7 @@ const Features = ()=>{
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                         lineNumber: 70,
-                                        columnNumber: 19
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-2xl font-semibold text-black mt-5",
@@ -463,7 +463,7 @@ const Features = ()=>{
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                         lineNumber: 77,
-                                        columnNumber: 19
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-lg text-black/50 my-2 leading-6",
@@ -471,7 +471,7 @@ const Features = ()=>{
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                         lineNumber: 80,
-                                        columnNumber: 19
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         className: "text-primary hover:text-blue-700 text-xl font-medium flex items-center gap-2 mt-6 pb-2 cursor-pointer",
@@ -484,19 +484,19 @@ const Features = ()=>{
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                                 lineNumber: 88,
-                                                columnNumber: 3
+                                                columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                         lineNumber: 83,
-                                        columnNumber: 19
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, i, true, {
                                 fileName: "[project]/src/app/components/Home/Features/index.tsx",
                                 lineNumber: 69,
-                                columnNumber: 17
+                                columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Home/Features/index.tsx",
@@ -885,106 +885,106 @@ const Pricing = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex justify-center mt-16 mb-6",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "pt-7 pb-7 px-7 bg-white rounded-2xl shadow-xl border border-red-400 max-w-lg w-full flex flex-col items-center relative hover:bg-red-50 group transition-all duration-300 min-h-[275px]",
+                            className: " pt-7 pb-7 px-7  bg-gradient-to-br from-blue-200 via-blue-400 to-blue-500 rounded-2xl shadow-xl border border-blue-400  max-w-lg w-full flex flex-col items-center relative  group transition-all duration-300 min-h-[275px] hover:bg-gradient-to-br hover:from-blue-900 hover:via-blue-950 hover:to-blue-900 ",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "mb-3 text-2xl font-bold text-red-600 group-hover:text-red-700 text-center transition-all",
-                                    children: "Schengen randevu"
+                                    className: " mb-3 text-2xl font-bold  text-blue-900 group-hover:text-white text-center transition-all ",
+                                    children: "Schengen Randevu"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                    lineNumber: 121,
-                                    columnNumber: 5
+                                    lineNumber: 128,
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/images/hero/schengen.png",
+                                    src: "/images/hero/schengen.jpeg",
                                     alt: "Schengen Visa",
                                     width: 130,
                                     height: 130,
                                     className: "mb-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                    lineNumber: 124,
-                                    columnNumber: 5
+                                    lineNumber: 134,
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base text-black/70 group-hover:text-black/80 text-center mb-4 max-w-xs transition-all",
+                                    className: " text-base text-blue-800 group-hover:text-blue-200 text-center mb-4 max-w-xs transition-all ",
                                     children: "26 Avrupa ülkesinde seyahat özgürlüğünüz için hızlı Schengen vizesi danışmanlığı!"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                    lineNumber: 131,
-                                    columnNumber: 5
+                                    lineNumber: 141,
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "text-white font-semibold bg-red-500 hover:bg-red-600 border-none rounded-full py-2 px-7 mb-3 cursor-pointer transition-all duration-300 shadow-sm",
+                                    className: " text-white font-semibold bg-blue-700 border-none rounded-full py-2 px-7 mb-3 cursor-pointer  transition-all duration-300 shadow-sm group-hover:bg-white group-hover:text-blue-900 ",
                                     onClick: ()=>setIsSignInOpen(true),
                                     children: "Randevu Oluştur"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                    lineNumber: 134,
-                                    columnNumber: 5
+                                    lineNumber: 146,
+                                    columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                     className: "mb-0",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex gap-2 items-center pt-2 text-black/60 group-hover:text-red-700 text-base transition-all",
+                                            className: " flex gap-2 items-center pt-2 text-blue-800 group-hover:text-blue-200 text-base transition-all ",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$iconify$2f$react$2f$dist$2f$iconify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
                                                     icon: "tabler:circle-check-filled",
                                                     className: "text-lg text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                                    lineNumber: 142,
-                                                    columnNumber: 9
+                                                    lineNumber: 161,
+                                                    columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "26 Avrupa ülkesinde geçerli vize"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                                    lineNumber: 143,
-                                                    columnNumber: 9
+                                                    lineNumber: 162,
+                                                    columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                            lineNumber: 141,
-                                            columnNumber: 7
+                                            lineNumber: 158,
+                                            columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex gap-2 items-center pt-2 text-black/60 group-hover:text-red-700 text-base transition-all",
+                                            className: " flex gap-2 items-center pt-2 text-blue-800 group-hover:text-blue-200 text-base transition-all ",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$iconify$2f$react$2f$dist$2f$iconify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
                                                     icon: "tabler:circle-check-filled",
                                                     className: "text-lg text-emerald-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                                    lineNumber: 146,
-                                                    columnNumber: 9
+                                                    lineNumber: 167,
+                                                    columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Uzman danışmanlık desteği"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                                    lineNumber: 147,
-                                                    columnNumber: 9
+                                                    lineNumber: 168,
+                                                    columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                            lineNumber: 145,
-                                            columnNumber: 7
+                                            lineNumber: 164,
+                                            columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                    lineNumber: 140,
-                                    columnNumber: 5
+                                    lineNumber: 157,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
                             lineNumber: 120,
-                            columnNumber: 3
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
@@ -1012,28 +1012,28 @@ const Pricing = ()=>{
                                 className: "text-white hover:text-primary text-24 inline-block me-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                                lineNumber: 166,
+                                lineNumber: 187,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                            lineNumber: 161,
+                            lineNumber: 182,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Auth$2f$SignIn$2f$index$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                            lineNumber: 171,
+                            lineNumber: 192,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                    lineNumber: 157,
+                    lineNumber: 178,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Home/Pricing/index.tsx",
-                lineNumber: 156,
+                lineNumber: 177,
                 columnNumber: 9
             }, this)
         ]
