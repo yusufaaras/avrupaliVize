@@ -260,7 +260,10 @@ const ALL_COUNTRIES = [
   "Zimbabwe"
 ];
 
-
+type PasaportBilgileriProps = {
+  form: any;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+};
 const COUNTRIES = ["Bulgaristan", "Fransa", "Hollanda", "İsviçre", "İtalya", "Macaristan", "Portekiz", "Slovenya"];
 const VISA_TYPES = ["Kısa Süreli Vize (C)", "Uzun Süreli Vize (D)"];
 const PURPOSES = ["Turistik", "Ticari", "Aile Ziyareti"];
@@ -268,7 +271,7 @@ const NATIONALITIES = ["Türkiye", "Almanya", "Fransa"];
 const GENDERS = ["Erkek", "Kadın", "Diğer"];
 
 // Pasaport Bilgileri - Macaristan (Görsel 1)
-function PasaportBilgileriMacaristan({ form, handleChange }) {
+function PasaportBilgileriMacaristan({ form, handleChange }: PasaportBilgileriProps) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4 mb-4 mt-2">
@@ -305,7 +308,7 @@ function PasaportBilgileriMacaristan({ form, handleChange }) {
   );
 }
 
-function PasaportBilgileriPortekiz({ form, handleChange }) {
+function PasaportBilgileriPortekiz({ form, handleChange }: PasaportBilgileriProps) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4 mb-4 mt-2">
@@ -343,7 +346,7 @@ function PasaportBilgileriPortekiz({ form, handleChange }) {
 }
 
 // Pasaport Bilgileri - Slovenya (Görsel 3)
-function PasaportBilgileriSlovenya({ form, handleChange }) {
+function PasaportBilgileriSlovenya({ form, handleChange }: PasaportBilgileriProps) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4 mb-4 mt-2">
@@ -381,7 +384,7 @@ function PasaportBilgileriSlovenya({ form, handleChange }) {
 }
 
 // Standart Pasaport Bilgileri
-function PasaportBilgileriNormal({ form, handleChange }) {
+function PasaportBilgileriNormal({ form, handleChange }: PasaportBilgileriProps) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4 mb-4 mt-2">
