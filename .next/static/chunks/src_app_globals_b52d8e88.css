@@ -1775,6 +1775,10 @@
     fill: currentColor;
   }
 
+  .object-contain {
+    object-fit: contain;
+  }
+
   .object-cover {
     object-fit: cover;
   }
@@ -2295,6 +2299,10 @@
     color: var(--color-gray-700);
   }
 
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+
   .text-green-600 {
     color: var(--color-green-600);
   }
@@ -2355,6 +2363,10 @@
 
   .italic {
     font-style: italic;
+  }
+
+  .line-through {
+    text-decoration-line: line-through;
   }
 
   .no-underline {
