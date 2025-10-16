@@ -2516,12 +2516,6 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:bg-blue-950:is(:where(.group):hover *) {
-      background-color: var(--color-blue-950);
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:bg-deepSlate:is(:where(.group):hover *) {
       background-color: var(--color-deepSlate);
     }
@@ -2534,26 +2528,8 @@
   }
 
   @media (hover: hover) {
-    .group-hover\:text-black\/80:is(:where(.group):hover *) {
-      color: #000c;
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .group-hover\:text-black\/80:is(:where(.group):hover *) {
-        color: color-mix(in oklab, var(--color-black) 80%, transparent);
-      }
-    }
-  }
-
-  @media (hover: hover) {
     .group-hover\:text-blue-200:is(:where(.group):hover *) {
       color: var(--color-blue-200);
-    }
-  }
-
-  @media (hover: hover) {
-    .group-hover\:text-blue-300:is(:where(.group):hover *) {
-      color: var(--color-blue-300);
     }
   }
 
@@ -2566,12 +2542,6 @@
   @media (hover: hover) {
     .group-hover\:text-primary:is(:where(.group):hover *) {
       color: var(--color-primary);
-    }
-  }
-
-  @media (hover: hover) {
-    .group-hover\:text-red-700:is(:where(.group):hover *) {
-      color: var(--color-red-700);
     }
   }
 
@@ -2802,12 +2772,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-blue-300:hover {
-      background-color: var(--color-blue-300);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-blue-600:hover {
       background-color: var(--color-blue-600);
     }
@@ -2816,18 +2780,6 @@
   @media (hover: hover) {
     .hover\:bg-blue-700:hover {
       background-color: var(--color-blue-700);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-blue-800:hover {
-      background-color: var(--color-blue-800);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-blue-950:hover {
-      background-color: var(--color-blue-950);
     }
   }
 
@@ -2900,12 +2852,6 @@
       .hover\:bg-primary\/20:hover {
         background-color: color-mix(in oklab, var(--color-primary) 20%, transparent);
       }
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-red-50:hover {
-      background-color: var(--color-red-50);
     }
   }
 
