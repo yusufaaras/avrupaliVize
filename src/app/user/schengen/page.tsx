@@ -662,7 +662,7 @@ export default function SchengenAppointmentForm() {
           <div className="font-semibold text-lg mb-2">Kredi Kartı ile Ödeme</div>
           <div className="text-red-600 font-medium mb-2">
             Stripe güvenli ödeme linki için WhatsApp üzerinden destek alabilirsiniz.<br/>
-            <span className="text-red-700 font-bold">+90 0540 811 10 11</span>
+            <span className="text-red-700 font-bold">+90 540 811 10 11</span>
           </div>
         </div>
       </form>
