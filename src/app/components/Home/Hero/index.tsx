@@ -30,6 +30,19 @@ const Banner = () => {
     }
   }, [isSignInOpen])
 
+  // NEW: global event listener — People bileşeninden gelen 'openSignInModal' event'ini dinle
+  useEffect(() => {
+    const handler = (_e?: Event) => setIsSignInOpen(true)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('openSignInModal', handler as EventListener)
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('openSignInModal', handler as EventListener)
+      }
+    }
+  }, [])
+
   return (
     <section className='bg-header pt-28 lg:pb-14 overflow-hidden'>
       <div className='container'>
@@ -70,6 +83,7 @@ const Banner = () => {
                 <button
                   className='text-white text-xl font-medium py-4 px-8 rounded-full transition duration-300 border border-primary bg-primary hover:bg-transparent hover:cursor-pointer hover:text-primary'
                   onClick={() => setIsSignInOpen(true)}
+                  type="button"
                 >
                   Randevu Oluştur
                 </button>
@@ -84,7 +98,7 @@ const Banner = () => {
                     <span className='w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100'>
                       <Icon icon='mdi:phone' className='text-blue-600 text-lg' />
                     </span>
-                    <span className='font-medium'>+90 0540 811 10 11</span>
+                    <span className='font-medium'>+90 540 811 10 11</span>
                   </a>
 
                   <a

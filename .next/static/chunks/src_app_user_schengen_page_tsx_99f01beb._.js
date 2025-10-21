@@ -2018,7 +2018,7 @@ function SchengenAppointmentForm() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-red-700 font-bold",
-                                        children: "+90 850 308 0876"
+                                        children: "+90 0540 811 10 11"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/user/schengen/page.tsx",
                                         lineNumber: 665,

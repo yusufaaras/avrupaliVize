@@ -67,6 +67,32 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <br />
+        <div className='mt-4 flex flex-col sm:flex-row items-center sm:items-start gap-3 text-center lg:text-start'>
+          <a
+            href='tel:+905408111011'
+            className='inline-flex items-center gap-3 text-gray-800 hover:text-primary transition'
+            aria-label='Telefon ile ara'
+          >
+            <span className='w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100'>
+              <Icon icon='mdi:phone' className='text-blue-600 text-lg' />
+            </span>
+            <span className='text-base font-normal text-white/60 hover:text-white'>+90 540 811 10 11</span>
+          </a>
+
+          <a
+            href='mailto:info@avrupalivize.com'
+            className='inline-flex items-center gap-3 text-gray-800 hover:text-primary transition'
+            aria-label='E-posta gönder'
+          >
+            <span className='w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100'>
+              <Icon icon='mdi:email-outline' className='text-blue-600 text-lg' />
+            </span>
+            <span className='text-base font-normal text-white/60 hover:text-white'>info@avrupalivize.com</span>
+          </a>
+        </div>
+
+        <br/>
         <div className='pt-4 flex flex-col sm:flex-row gap-4 items-center justify-between border-t border-t-white/30'>
           <div className='flex flex-col md:flex-row gap-2 md:gap-5 justify-center items-center md:justify-start'>
             <h4 className='text-base font-normal text-white/60 hover:text-white'>
