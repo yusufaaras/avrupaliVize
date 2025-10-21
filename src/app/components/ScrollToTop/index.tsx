@@ -30,7 +30,7 @@ export default function ScrollToTop() {
     <div className='fixed bottom-8 right-8 z-999'>
       <div className='flex items-center gap-2.5'> 
         <Link
-          href='https://wa.me/905xxxxxxxxx' // Telefon numaranızı güncelleyin
+          href='https://wa.me/9005408111011' // Telefon numaranızı güncelleyin
           target='_blank'
           aria-label='WhatsApp ile iletişime geç'
           className='flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] shadow-lg transition hover:scale-105'

@@ -122,16 +122,95 @@ const Banner = ()=>{
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "mx-auto lg:mx-0",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                className: "text-white text-xl font-medium py-4 px-8 rounded-full transition duration-300 border border-primary bg-primary hover:bg-transparent hover:cursor-pointer hover:text-primary",
-                                                onClick: ()=>setIsSignInOpen(true),
-                                                children: "Randevu Oluştur"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                                                lineNumber: 70,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    className: "text-white text-xl font-medium py-4 px-8 rounded-full transition duration-300 border border-primary bg-primary hover:bg-transparent hover:cursor-pointer hover:text-primary",
+                                                    onClick: ()=>setIsSignInOpen(true),
+                                                    children: "Randevu Oluştur"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                    lineNumber: 70,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "mt-4 flex flex-col sm:flex-row items-center sm:items-start gap-3 text-center lg:text-start",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                            href: "tel:+905408111011",
+                                                            className: "inline-flex items-center gap-3 text-gray-800 hover:text-primary transition",
+                                                            "aria-label": "Telefon ile ara",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$iconify$2f$react$2f$dist$2f$iconify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
+                                                                        icon: "mdi:phone",
+                                                                        className: "text-blue-600 text-lg"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                                        lineNumber: 85,
+                                                                        columnNumber: 23
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                                    lineNumber: 84,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "font-medium",
+                                                                    children: "+90 0540 811 10 11"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                                    lineNumber: 87,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                            lineNumber: 79,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                            href: "mailto:info@avrupalivize.com",
+                                                            className: "inline-flex items-center gap-3 text-gray-800 hover:text-primary transition",
+                                                            "aria-label": "E-posta gönder",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$iconify$2f$react$2f$dist$2f$iconify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
+                                                                        icon: "mdi:email-outline",
+                                                                        className: "text-blue-600 text-lg"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                                        lineNumber: 96,
+                                                                        columnNumber: 23
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                                    lineNumber: 95,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "font-medium",
+                                                                    children: "info@avrupalivize.com"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                                    lineNumber: 98,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                            lineNumber: 90,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                                    lineNumber: 78,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "[project]/src/app/components/Home/Hero/index.tsx",
                                             lineNumber: 69,
                                             columnNumber: 15
@@ -159,17 +238,17 @@ const Banner = ()=>{
                                     className: "w-full"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                                    lineNumber: 81,
+                                    lineNumber: 107,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                                lineNumber: 80,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                            lineNumber: 79,
+                            lineNumber: 105,
                             columnNumber: 11
                         }, this)
                     ]
@@ -198,28 +277,91 @@ const Banner = ()=>{
                                 className: "text-white hover:text-primary text-24 inline-block me-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                                lineNumber: 103,
+                                lineNumber: 130,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                            lineNumber: 98,
+                            lineNumber: 125,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Auth$2f$SignIn$2f$index$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                             fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                            lineNumber: 108,
+                            lineNumber: 136,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mt-6 flex flex-col items-center gap-3 text-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: "tel:+905408111011",
+                                    className: "inline-flex items-center gap-2 text-gray-800 hover:text-primary transition",
+                                    "aria-label": "Telefon ile ara",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$iconify$2f$react$2f$dist$2f$iconify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
+                                            icon: "mdi:phone",
+                                            className: "text-blue-600 text-lg"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                            lineNumber: 145,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-medium",
+                                            children: "0540 811 10 11"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                            lineNumber: 146,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                    lineNumber: 140,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: "mailto:info@avrupalivize.com",
+                                    className: "inline-flex items-center gap-2 text-gray-800 hover:text-primary transition",
+                                    "aria-label": "E-posta gönder",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$iconify$2f$react$2f$dist$2f$iconify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Icon"], {
+                                            icon: "mdi:email-outline",
+                                            className: "text-blue-600 text-lg"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                            lineNumber: 153,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-medium",
+                                            children: "info@avrupalivize.com"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                            lineNumber: 154,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                                    lineNumber: 148,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/components/Home/Hero/index.tsx",
+                            lineNumber: 139,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                    lineNumber: 94,
+                    lineNumber: 121,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Home/Hero/index.tsx",
-                lineNumber: 93,
+                lineNumber: 120,
                 columnNumber: 9
             }, this)
         ]
@@ -1058,14 +1200,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 'use client';
 ;
 ;
+const initialFormState = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    phnumber: '',
+    Message: ''
+};
 const ContactForm = ()=>{
-    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        firstname: '',
-        lastname: '',
-        email: '',
-        phnumber: '',
-        Message: ''
-    });
+    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialFormState);
     const [submitted, setSubmitted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [showThanks, setShowThanks] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [loader, setLoader] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -1084,28 +1227,27 @@ const ContactForm = ()=>{
             }));
     };
     const reset = ()=>{
-        formData.firstname = '';
-        formData.lastname = '';
-        formData.email = '';
-        formData.phnumber = '';
-        formData.Message = '';
+        setFormData(initialFormState);
     };
     const handleSubmit = async (e)=>{
         e.preventDefault();
         setLoader(true);
-        fetch('https://formsubmit.co/ajax/yusuff.aaras@gmail.com', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                Name: formData.firstname,
-                LastName: formData.lastname,
-                Email: formData.email,
-                PhoneNo: formData.phnumber,
-                Message: formData.Message
-            })
-        }).then((response)=>response.json()).then((data)=>{
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/info@avrupalivize.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify({
+                    Name: formData.firstname,
+                    LastName: formData.lastname,
+                    Email: formData.email,
+                    PhoneNo: formData.phnumber,
+                    Message: formData.Message
+                })
+            });
+            const data = await response.json();
             if (data.success) {
                 setSubmitted(true);
                 setShowThanks(true);
@@ -1113,12 +1255,15 @@ const ContactForm = ()=>{
                 setTimeout(()=>{
                     setShowThanks(false);
                 }, 5000);
+            } else {
+                // Eğer formsubmit success dönmüyorsa yine kullanıcıya bilgi verebiliriz
+                console.warn('Form gönderildi ancak success döndürülmedi:', data);
             }
-            reset();
-        }).catch((error)=>{
+        } catch (error) {
+            console.error('Form gönderilirken hata:', error?.message ?? error);
+        } finally{
             setLoader(false);
-            console.log(error.message);
-        });
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "contact",
@@ -1132,7 +1277,7 @@ const ContactForm = ()=>{
                         children: "İletişim Formu"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                        lineNumber: 76,
+                        lineNumber: 83,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1151,7 +1296,7 @@ const ContactForm = ()=>{
                                                 children: "Ad"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 91,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1164,13 +1309,13 @@ const ContactForm = ()=>{
                                                 className: "w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 96,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 90,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1182,7 +1327,7 @@ const ContactForm = ()=>{
                                                 children: "Soyad"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 100,
+                                                lineNumber: 107,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1195,19 +1340,19 @@ const ContactForm = ()=>{
                                                 className: "w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 105,
+                                                lineNumber: 112,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 106,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                lineNumber: 82,
+                                lineNumber: 89,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1222,7 +1367,7 @@ const ContactForm = ()=>{
                                                 children: "E-posta adresi"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 125,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1235,13 +1380,13 @@ const ContactForm = ()=>{
                                                 className: "w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 128,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1253,7 +1398,7 @@ const ContactForm = ()=>{
                                                 children: "Telefon Numarası"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 139,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1266,19 +1411,19 @@ const ContactForm = ()=>{
                                                 className: "w-full text-base px-4 rounded-2xl py-2.5 border-solid border transition-all duration-500 focus:border-primary focus:outline-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 144,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 138,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                lineNumber: 116,
+                                lineNumber: 123,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1290,7 +1435,7 @@ const ContactForm = ()=>{
                                         children: "Mesajınız"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1302,13 +1447,13 @@ const ContactForm = ()=>{
                                         placeholder: "İletmek istediğiniz mesajınızı yazınız"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 159,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                lineNumber: 148,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1318,21 +1463,21 @@ const ContactForm = ()=>{
                                     disabled: !isFormValid || loader,
                                     className: `border leading-none px-6 text-lg font-medium py-4 rounded-full 
                     ${!isFormValid || loader ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-primary border-primary text-white hover:bg-transparent hover:text-primary cursor-pointer'}`,
-                                    children: "Gönder"
+                                    children: loader ? 'Gönderiliyor...' : 'Gönder'
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 168,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                lineNumber: 160,
+                                lineNumber: 167,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                        lineNumber: 79,
+                        lineNumber: 86,
                         columnNumber: 11
                     }, this),
                     showThanks && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1343,29 +1488,29 @@ const ContactForm = ()=>{
                                 className: "w-3 h-3 rounded-full animate-spin border-2 border-solid border-white border-t-transparent"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                                lineNumber: 177,
+                                lineNumber: 184,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                        lineNumber: 175,
+                        lineNumber: 182,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-                lineNumber: 75,
+                lineNumber: 82,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-            lineNumber: 74,
+            lineNumber: 81,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/Contact/Form/index.tsx",
-        lineNumber: 73,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 };

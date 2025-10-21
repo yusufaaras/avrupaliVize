@@ -2,14 +2,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 
+const initialFormState = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  phnumber: '',
+  Message: '',
+}
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    phnumber: '',
-    Message: '',
-  })
+  const [formData, setFormData] = useState(initialFormState)
   const [submitted, setSubmitted] = useState(false)
   const [showThanks, setShowThanks] = useState(false)
   const [loader, setLoader] = useState(false)
@@ -21,6 +23,7 @@ const ContactForm = () => {
     )
     setIsFormValid(isValid)
   }, [formData])
+
   const handleChange = (e: any) => {
     const { name, value } = e.target
     setFormData((prevData) => ({
@@ -28,47 +31,51 @@ const ContactForm = () => {
       [name]: value,
     }))
   }
+
   const reset = () => {
-    formData.firstname = ''
-    formData.lastname = ''
-    formData.email = ''
-    formData.phnumber = ''
-    formData.Message = ''
+    setFormData(initialFormState)
   }
+
   const handleSubmit = async (e: any) => {
     e.preventDefault()
     setLoader(true)
 
-    fetch('https://formsubmit.co/ajax/yusuff.aaras@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({
-        Name: formData.firstname,
-        LastName: formData.lastname,
-        Email: formData.email,
-        PhoneNo: formData.phnumber,
-        Message: formData.Message,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          setSubmitted(true)
-          setShowThanks(true)
-          reset()
-
-          setTimeout(() => {
-            setShowThanks(false)
-          }, 5000)
+    try {
+      const response = await fetch(
+        'https://formsubmit.co/ajax/info@avrupalivize.com',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            Name: formData.firstname,
+            LastName: formData.lastname,
+            Email: formData.email,
+            PhoneNo: formData.phnumber,
+            Message: formData.Message,
+          }),
         }
+      )
 
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+        setShowThanks(true)
         reset()
-      })
-      .catch((error) => {
-        setLoader(false)
-        console.log(error.message)
-      })
+        setTimeout(() => {
+          setShowThanks(false)
+        }, 5000)
+      } else {
+        // Eğer formsubmit success dönmüyorsa yine kullanıcıya bilgi verebiliriz
+        console.warn('Form gönderildi ancak success döndürülmedi:', data)
+      }
+    } catch (error: any) {
+      console.error('Form gönderilirken hata:', error?.message ?? error)
+    } finally {
+      setLoader(false)
+    }
   }
+
   return (
     <section id='contact'>
       <div className='container'>
@@ -167,7 +174,7 @@ const ContactForm = () => {
                         ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                         : 'bg-primary border-primary text-white hover:bg-transparent hover:text-primary cursor-pointer'
                     }`}>
-                Gönder
+                {loader ? 'Gönderiliyor...' : 'Gönder'}
               </button>
             </div>
           </form>

@@ -382,6 +382,68 @@ function PasaportBilgileriSlovenya({ form, handleChange }: PasaportBilgileriProp
     </>
   );
 }
+function PasaportBilgileriItaly({ form, handleChange }: PasaportBilgileriProps) {
+  return (
+    <>
+      {/* İlk satır: milliyet, pasaport no, pasaport verildiği yer (korunmuş) */}
+      <div className="flex flex-col md:flex-row gap-4 mb-4 mt-2">
+        <div className="flex-1">
+          <label>MİLLİYET</label>
+          <select name="milliyet" value={form.milliyet} onChange={handleChange} className={inputClass}>
+            {NATIONALITIES.map(n => <option key={n} value={n}>{n}</option>)}
+          </select>
+        </div>
+        <div className="flex-1">
+          <label>PASAPORT NO</label>
+          <input name="pasaportNo" value={form.pasaportNo} onChange={handleChange} className={inputClass} />
+        </div>
+        <div className="flex-1">
+          <label>PASAPORTUN VERİLDİĞİ YER</label>
+          <input name="pasaportVerildigiYer" value={form.pasaportVerildigiYer} onChange={handleChange} className={inputClass} />
+        </div>
+      </div>
+
+      {/* İtalya için dış konteyner beyaz yapıldı; iç alanlar aynı şekilde düzenlendi */}
+      <div className="bg-white p-4 rounded mb-4">
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex-1">
+            <label>İKAMET ADRESİ (IDATA ÖZEL)</label>
+            <input name="ikametAdresi" value={form.ikametAdresi || ""} onChange={handleChange} className={inputClass} />
+          </div>
+          <div className="flex-1">
+            <label>KİŞİ EMAİLİ (IDATA ÖZEL)</label>
+            <input name="kisiEmaili" value={form.kisiEmaili || ""} onChange={handleChange} className={inputClass} />
+          </div>
+          <div className="flex-1">
+            <label>KİŞİ TELEFONU (IDATA ÖZEL)</label>
+            <input name="kisiTelefonu" value={form.kisiTelefonu || ""} onChange={handleChange} className={inputClass} />
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-4 mt-4">
+          <div className="flex-1">
+            <label>PASAPORT VERİLİŞ TARİHİ (DD/MM/YYYY)</label>
+            <input name="pasaportVerilis" value={form.pasaportVerilis} onChange={handleChange} className={inputClass} />
+          </div>
+          <div className="flex-1">
+            <label>PASAPORT SON GEÇERLİLİK TARİHİ (DD/MM/YYYY)</label>
+            <input name="pasaportSonGecerlilik" value={form.pasaportSonGecerlilik} onChange={handleChange} className={inputClass} />
+          </div>
+          <div className="flex-1">
+            <label>DOĞUM TARİHİ (DD/MM/YYYY)</label>
+            <input name="dogumTarihi" value={form.dogumTarihi} onChange={handleChange} className={inputClass} />
+          </div>
+        </div>
+
+        {/* Yeni eklenen alan: DOĞUM YERİ */}
+        <div className="mt-4">
+          <label>DOĞUM YERİ</label>
+          <input name="dogumYeri" value={form.dogumYeri || ""} onChange={handleChange} className={inputClass} />
+        </div>
+      </div>
+    </>
+  );
+}
 
 // Standart Pasaport Bilgileri
 function PasaportBilgileriNormal({ form, handleChange }: PasaportBilgileriProps) {
@@ -484,6 +546,7 @@ export default function SchengenAppointmentForm() {
   const isMacaristan = form.ulke === "Macaristan";
   const isPortekiz = form.ulke === "Portekiz";
   const isSlovenya = form.ulke === "Slovenya";
+  const isItaly = form.ulke === "İtalya";
 
   const purposesOptions = isSwiss ? ["Turistik"] : PURPOSES;
 
@@ -514,6 +577,8 @@ export default function SchengenAppointmentForm() {
     PasaportFormComponent = PasaportBilgileriPortekiz;
   } else if (isSlovenya) {
     PasaportFormComponent = PasaportBilgileriSlovenya;
+  }if (isItaly) {
+    PasaportFormComponent = PasaportBilgileriItaly;
   }
 
   return (

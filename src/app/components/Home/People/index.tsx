@@ -1,47 +1,84 @@
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@iconify/react/dist/iconify.js'
 
+const steps = [
+  {
+    id: '01',
+    icon: 'mdi:file-document-outline',
+    title: 'DS-160 formunuzu doldurun',
+    desc:
+      'DS-160 formunuzu doldurun ve www.usvisascheduling.com sayfasından önce mevcut randevunuzu alın.',
+  },
+  {
+    id: '02',
+    icon: 'mdi:web',
+    title: 'Tarih aralığını seçin',
+    desc: 'Vize Randevu Bulucu’ya giriş yapın ve istediğiniz tarih aralığını seçin.',
+  },
+  {
+    id: '03',
+    icon: 'mdi:credit-card-outline',
+    title: 'Güvenli ödeme yapın',
+    desc:
+      'Stripe ile güvenli ödeme yapın. Ödemeniz randevu alına kadar havuzda beklesin.',
+  },
+  {
+    id: '04',
+    icon: 'mdi:calendar-check',
+    title: 'Randevunuzu güncelleyin',
+    desc: 'Randevunuz erkene çekilsin ve vize tarihinizi güncelleyin!',
+  },
+]
+
 const People = () => {
   return (
-    <section className='pt-32 sm:pb-20 pb-10' id='hakkimizda'>
-      <div className='container'>
-        <div className='grid grid-cols-1 lg:grid-cols-12 space-x-1'>
-          <div className='col-span-6 flex justify-center'>
-            <div className="bg-Lightsuccess bg-[url('/images/people/bg-lines.png')] bg-no-repeat bg-contain bg-right-bottom w-full h-full flex flex-col gap-10 relative sm:py-11 py-14 sm:px-16 px-8 rounded-2xl after:absolute after:bg-[url('/images/people/quote.png')] after:w-48 after:h-40 after:-top-16 after:right-0">
-              <div className='flex items-center gap-10'>
-                <div>
-                  <Image
-                    src='/images/logo/vizelogo.png' 
-                    alt='global-visa'
-                    width={200}
-                    height={200}
-                  />
+    <section className="pt-20 pb-20 bg-white" id="hakkimizda">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-extrabold text-midnight_text text-center mb-10">
+          ABD Vize Nasıl Çalışır?
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              className="relative border border-gray-200 rounded-2xl p-6 lg:p-8 bg-white shadow-sm overflow-hidden"
+            >
+              {/* Büyük opak numara arka plan */}
+              <span className="absolute right-6 bottom-3 text-[110px] lg:text-[140px] font-extrabold text-gray-200 opacity-10 pointer-events-none select-none leading-none">
+                {step.id}
+              </span>
+
+              {/* Sağa yukarı ok */}
+              <span className="absolute right-6 top-6 text-3xl text-gray-300">
+                <Icon icon="tabler:arrow-up-right" />
+              </span>
+
+              <div className="flex items-start gap-6">
+                {/* Mavi ikon kutusu: ikon MAVI olsun (ikon rengi mavi), arka plan açık mavi */}
+                <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-blue-50 flex items-center justify-center border border-blue-100">
+                  <Icon icon={step.icon} className="text-blue-600 text-2xl" />
                 </div>
-                <div className=''>
-                  <p className='text-2xl font-semibold'>Avrupalı Vize Danışmanlık</p>
-                  <p className='text-lg text-black/55'>Uluslararası Vize Çözümleri</p>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-midnight_text mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-700 text-base max-w-xl">{step.desc}</p>
                 </div>
               </div>
-              <p className='font-medium text-2xl leading-9'>
-                “Seyahat engelleri sadece haritadaki çizgilerdir; amacımız, bu engelleri güvenle aşmanıza yardımcı olmak. Uzman vize danışmanlığı ile dünyanın her yerine kolayca ulaşın.”
-              </p>
             </div>
-          </div>
-          <div className='col-span-6 flex justify-center flex-col gap-4 lg:pl-24 mt-10 lg:mt-0 '>
-            <h2 className='text-midnight_text text-center lg:text-start'>
-              Yurt Dışı Vize Danışmanlığında Güvenilir Adres
-            </h2>
-            <p className='text-black/75 text-lg font-normal text-center lg:text-start max-w-md mx-auto lg:mx-0'>
-              Şirketimiz, yurt dışı seyahatiniz için ihtiyacınız olan vize başvurularını ve randevu işlemlerini sizin adınıza hızlı ve güvenilir şekilde gerçekleştirir. Uzman ekibimizle, tüm süreç boyunca yanınızdayız.
-            </p>
-            <Link
-              href={'/#randevu'}
-              className='text-primary hover:text-blue-700 text-lg font-medium flex items-center gap-2 mx-auto lg:mx-0'>
-              Daha Fazla Bilgi
-              <Icon icon='tabler:arrow-right' className='text-2xl' />
-            </Link>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <Icon icon="mdi:lightbulb-on-outline" className="text-2xl text-amber-400" />
+          <br/>
+          <p className="text-gray-800 font-medium text-lg text-center max-w-2xl">
+            Tüm süreç şeffaf ve kolaydır. Siz sadece başvurunuzu yapın, biz randevunuzu hızlandıralım!
+          </p>
         </div>
       </div>
     </section>

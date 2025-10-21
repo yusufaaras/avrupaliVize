@@ -73,9 +73,35 @@ const Banner = () => {
                 >
                   Randevu Oluştur
                 </button>
+
+                {/* Telefon ve e-posta bilgileri: butonun altında */}
+                <div className='mt-4 flex flex-col sm:flex-row items-center sm:items-start gap-3 text-center lg:text-start'>
+                  <a
+                    href='tel:+905408111011'
+                    className='inline-flex items-center gap-3 text-gray-800 hover:text-primary transition'
+                    aria-label='Telefon ile ara'
+                  >
+                    <span className='w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100'>
+                      <Icon icon='mdi:phone' className='text-blue-600 text-lg' />
+                    </span>
+                    <span className='font-medium'>+90 0540 811 10 11</span>
+                  </a>
+
+                  <a
+                    href='mailto:info@avrupalivize.com'
+                    className='inline-flex items-center gap-3 text-gray-800 hover:text-primary transition'
+                    aria-label='E-posta gönder'
+                  >
+                    <span className='w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100'>
+                      <Icon icon='mdi:email-outline' className='text-blue-600 text-lg' />
+                    </span>
+                    <span className='font-medium'>info@avrupalivize.com</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+
           <div className='mt-10 lg:mt-0 lg:col-span-5'>
             <div>
               <Image
@@ -89,6 +115,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
+
       {isSignInOpen && (
         <div className='fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
           <div
@@ -105,7 +132,28 @@ const Banner = () => {
                 className='text-white hover:text-primary text-24 inline-block me-2'
               />
             </button>
+
             <Signin />
+
+            {/* Modal içinde de iletişim bilgilerini göstermek isterseniz */}
+            <div className='mt-6 flex flex-col items-center gap-3 text-center'>
+              <a
+                href='tel:+905408111011'
+                className='inline-flex items-center gap-2 text-gray-800 hover:text-primary transition'
+                aria-label='Telefon ile ara'
+              >
+                <Icon icon='mdi:phone' className='text-blue-600 text-lg' />
+                <span className='font-medium'>0540 811 10 11</span>
+              </a>
+              <a
+                href='mailto:info@avrupalivize.com'
+                className='inline-flex items-center gap-2 text-gray-800 hover:text-primary transition'
+                aria-label='E-posta gönder'
+              >
+                <Icon icon='mdi:email-outline' className='text-blue-600 text-lg' />
+                <span className='font-medium'>info@avrupalivize.com</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
