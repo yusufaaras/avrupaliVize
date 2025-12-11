@@ -589,12 +589,20 @@
     position: sticky;
   }
 
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
 
   .top-1 {
     top: calc(var(--spacing) * 1);
+  }
+
+  .top-3 {
+    top: calc(var(--spacing) * 3);
   }
 
   .top-6 {
@@ -619,6 +627,10 @@
 
   .right-1 {
     right: calc(var(--spacing) * 1);
+  }
+
+  .right-3 {
+    right: calc(var(--spacing) * 3);
   }
 
   .right-6 {
@@ -1137,6 +1149,10 @@
     height: 100vh;
   }
 
+  .max-h-\[90vh\] {
+    max-height: 90vh;
+  }
+
   .min-h-\[180px\] {
     min-height: 180px;
   }
@@ -1295,6 +1311,10 @@
 
   .max-w-\[360px\] {
     max-width: 360px;
+  }
+
+  .max-w-\[520px\] {
+    max-width: 520px;
   }
 
   .max-w-\[525px\] {
@@ -1565,6 +1585,10 @@
 
   .overflow-x-auto {
     overflow-x: auto;
+  }
+
+  .overflow-y-auto {
+    overflow-y: auto;
   }
 
   .rounded {
@@ -2444,6 +2468,10 @@
     color: var(--color-gray-800);
   }
 
+  .text-green-500 {
+    color: var(--color-green-500);
+  }
+
   .text-green-600 {
     color: var(--color-green-600);
   }
@@ -2462,6 +2490,10 @@
 
   .text-primary {
     color: var(--color-primary);
+  }
+
+  .text-red-500 {
+    color: var(--color-red-500);
   }
 
   .text-red-600 {
@@ -3090,6 +3122,12 @@
   @media (hover: hover) {
     .hover\:text-blue-700:hover {
       color: var(--color-blue-700);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:text-gray-700:hover {
+      color: var(--color-gray-700);
     }
   }
 

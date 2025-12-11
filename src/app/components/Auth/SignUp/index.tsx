@@ -6,36 +6,67 @@ import SocialSignUp from '../SocialSignUp'
 import Logo from '@/app/components/Layout/Header/Logo'
 import { useState } from 'react'
 import Loader from '@/app/components/Common/Loader'
+import SignIn from '../SignIn'
 
-const SignUp = () => {
+interface SignUpProps {
+  onBackToSignIn?: () => void
+}
+
+const SignUp = ({ onBackToSignIn }: SignUpProps = {}) => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  const [successMsg, setSuccessMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
+  const [showSignIn, setShowSignIn] = useState(false)
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
 
     setLoading(true)
     const data = new FormData(e.currentTarget)
     const value = Object.fromEntries(data.entries())
-    const finalData = { ...value }
 
-    fetch('/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(finalData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast.success('Kayıt başarılı')
-        setLoading(false)
-        router.push('/signin')
+    // API adresi (.env.local içine NEXT_PUBLIC_API_BASE=http://localhost:4000 yazılabilir)
+    const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:4000'
+
+    try {
+      const res = await fetch(`${API_BASE}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: value.firstName,
+          lastName: value.lastName,
+          email: value.email,
+          password: value.password,
+        }),
       })
-      .catch((err) => {
-        toast.error(err.message)
-        setLoading(false)
-      })
+
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({}))
+        const firstValidation =
+          Array.isArray(errBody?.errors) && errBody.errors.length
+            ? errBody.errors[0]?.msg || errBody.errors[0]?.param
+            : undefined
+        const message = errBody?.message || firstValidation || 'Kayıt başarısız'
+        throw new Error(message)
+      }
+
+      toast.success('Kayıt tamamlandı, giriş yapabilirsiniz!')
+      setErrorMsg('')
+      setSuccessMsg('Kayıt tamamlandı, giriş yapabilirsiniz!')
+    } catch (err: any) {
+      const message = err?.message || 'Bir sıkıntı oldu, tekrar deneyin!'
+      setErrorMsg(message)
+      toast.error(message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (showSignIn) {
+    return <SignIn />
   }
 
   return (
@@ -56,11 +87,18 @@ const SignUp = () => {
       </span>
 
       <form onSubmit={handleSubmit}>
-        <div className='mb-[22px]'>
+        <div className='mb-[22px] flex gap-4'>
           <input
             type='text'
-            placeholder='Adınız'
-            name='name'
+            placeholder='Ad'
+            name='firstName'
+            required
+            className='w-full rounded-md border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition border-gray-200 placeholder:text-black/30 focus:border-primary text-black focus-visible:shadow-none'
+          />
+          <input
+            type='text'
+            placeholder='Soyad'
+            name='lastName'
             required
             className='w-full rounded-md border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition border-gray-200 placeholder:text-black/30 focus:border-primary text-black focus-visible:shadow-none'
           />
@@ -90,6 +128,12 @@ const SignUp = () => {
             Kayıt Ol {loading && <Loader />}
           </button>
         </div>
+        {successMsg && (
+          <p className='text-green-600 text-center mb-2 text-sm'>{successMsg}</p>
+        )}
+        {errorMsg && (
+          <p className='text-red-600 text-center mb-2 text-sm'>{errorMsg}</p>
+        )}
       </form>
 
       <p className='text-body-secondary mb-4 text-black text-base'>
@@ -105,10 +149,19 @@ const SignUp = () => {
       </p>
 
       <p className='text-body-secondary text-black text-base'>
-        Zaten bir hesabınız var mı?
-        <Link href='/signin' className='pl-2 text-primary hover:underline'>
+        Zaten bir hesabınız var mı?{' '}
+        <button
+          type='button'
+          onClick={() => {
+            if (onBackToSignIn) {
+              onBackToSignIn()
+            } else {
+              setShowSignIn(true)
+            }
+          }}
+          className='text-primary hover:underline'>
           Giriş Yap
-        </Link>
+        </button>
       </p>
     </>
   )

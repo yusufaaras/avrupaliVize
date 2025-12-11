@@ -9,32 +9,53 @@ import Loader from "@/components/Common/Loader";
 const SignUp = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     setLoading(true);
     const data = new FormData(e.currentTarget);
     const value = Object.fromEntries(data.entries());
-    const finalData = { ...value };
 
-    fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(finalData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast.success("Successfully registered");
-        setLoading(false);
-        router.push("/signin");
-      })
-      .catch((err) => {
-        toast.error(err.message);
-        setLoading(false);
+    const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:4000";
+
+    try {
+      const res = await fetch(`${API_BASE}/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: value.firstName,
+          lastName: value.lastName,
+          email: value.email,
+          password: value.password,
+        }),
       });
+
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({}));
+        const firstValidation =
+          Array.isArray(errBody?.errors) && errBody.errors.length
+            ? errBody.errors[0]?.msg || errBody.errors[0]?.param
+            : undefined;
+        const message =
+          errBody?.message || firstValidation || "Registration failed";
+        throw new Error(message);
+      }
+
+      toast.success("Kayıt tamamlandı, giriş yapabilirsiniz!");
+      setErrorMsg("");
+      setSuccessMsg("Kayıt tamamlandı, giriş yapabilirsiniz!");
+    } catch (err: any) {
+      const message = err?.message || "Bir sıkıntı oldu, tekrar deneyin!";
+      setErrorMsg(message);
+      toast.error(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -52,11 +73,18 @@ const SignUp = () => {
       </span>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-[22px]">
+        <div className="mb-[22px] flex gap-4">
           <input
             type="text"
-            placeholder="Name"
-            name="name"
+            placeholder="First name"
+            name="firstName"
+            required
+            className="w-full rounded-md border border-dark_border border-opacity-60 border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-white dark:focus:border-primary"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            name="lastName"
             required
             className="w-full rounded-md border border-dark_border border-opacity-60 border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-white dark:focus:border-primary"
           />
@@ -87,6 +115,12 @@ const SignUp = () => {
             Sign Up {loading && <Loader />}
           </button>
         </div>
+        {successMsg && (
+          <p className="text-green-500 text-center mb-2 text-sm">{successMsg}</p>
+        )}
+        {errorMsg && (
+          <p className="text-red-500 text-center mb-2 text-sm">{errorMsg}</p>
+        )}
       </form>
 
       <p className="text-body-secondary mb-4 text-white text-base">
